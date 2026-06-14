@@ -1,0 +1,18 @@
+# Local preview/launch tooling (not part of the deployed site)
+.claude/
+
+# OS / editor cruft
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Node (only if tooling is added later)
+node_modules/
+npm-debug.log*
+
+# Local Gitea runtime data (must never be committed to the site repo)
+/gitea/
+gitea.exe
