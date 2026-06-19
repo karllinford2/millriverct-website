@@ -51,27 +51,37 @@ a:hover { color: var(--tide-deep); }
   position: absolute;
   left: 0; right: 0; bottom: -1px;
   width: 100%;
-  height: clamp(70px, 11vw, 110px);
+  height: clamp(90px, 13vw, 140px);
   z-index: 0;
   line-height: 0;
 }
 .waves { width: 100%; height: 100%; }
 
+/* The whole wave set rises and falls gently (lapping), while each band
+   drifts horizontally at its own pace (rippling). */
+.wave-parallax {
+  animation: wave-bob 7s ease-in-out infinite;
+}
 .wave-parallax > use {
   fill: var(--paper);
   animation: wave-drift 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
-.wave-parallax > use:nth-child(1) { opacity: 0.55; animation-delay: -2s; animation-duration: 9s;  }
-.wave-parallax > use:nth-child(2) { opacity: 0.45; animation-delay: -3s; animation-duration: 12s; }
-.wave-parallax > use:nth-child(3) { opacity: 0.30; animation-delay: -4s; animation-duration: 16s; }
-.wave-parallax > use:nth-child(4) { opacity: 1;    animation-delay: -5s; animation-duration: 22s; }
+.wave-parallax > use:nth-child(1) { opacity: 0.55; animation-delay: -2s; animation-duration: 14s; }
+.wave-parallax > use:nth-child(2) { opacity: 0.45; animation-delay: -3s; animation-duration: 18s; }
+.wave-parallax > use:nth-child(3) { opacity: 0.30; animation-delay: -4s; animation-duration: 24s; }
+.wave-parallax > use:nth-child(4) { opacity: 1;    animation-delay: -5s; animation-duration: 32s; }
 
 @keyframes wave-drift {
   0%   { transform: translate3d(-90px, 0, 0); }
   100% { transform: translate3d(85px, 0, 0); }
 }
+@keyframes wave-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(7px); }
+}
 
 @media (prefers-reduced-motion: reduce) {
+  .wave-parallax,
   .wave-parallax > use { animation: none; }
 }
 
