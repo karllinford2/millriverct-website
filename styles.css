@@ -207,6 +207,69 @@ p { color: var(--ink-soft); }
   color: var(--ink-soft);
 }
 
+/* ---------- Call to action: donate / phone / signup ---------- */
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 1.6rem 0 1.9rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.btn--donate { background: #00b15c; color: #fff; box-shadow: 0 2px 10px rgba(0,177,92,0.3); }
+.btn--donate:hover { background: #009a4f; color: #fff; }
+
+.btn--phone { background: transparent; color: var(--tide-deep); border-color: var(--tide); }
+.btn--phone:hover { background: var(--tide); color: #fff; }
+
+.signup {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  max-width: 560px;
+}
+.signup label {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.65rem;
+}
+.signup__row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.signup input[type="email"] {
+  flex: 1 1 240px;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  color: var(--ink);
+}
+.signup input[type="email"]:focus {
+  outline: none;
+  border-color: var(--tide);
+  box-shadow: 0 0 0 3px rgba(29, 91, 110, 0.15);
+}
+.btn--signup { background: var(--tide); color: #fff; flex: 0 0 auto; }
+.btn--signup:hover { background: var(--tide-deep); color: #fff; }
+
 /* ---------- Footer ---------- */
 .footer {
   background: var(--tide-deep);
