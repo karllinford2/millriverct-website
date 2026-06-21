@@ -3,223 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mill River, Southport CT &mdash; A Tidewater History</title>
-  <meta name="description" content="A welcome to Mill River in Southport, Connecticut, and the story of the tide-powered grist mill and dam at the mouth of the harbor." />
+  <title>Mill River Estuary Foundation — Southport, CT</title>
+  <meta name="description" content="The Mill River Estuary Foundation works to preserve, protect, and restore the waterway where the Mill River meets Southport Harbor, including the historic Tide Mill Dam." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root{
+      --ink:#16222b; --soft:#41535f; --paper:#f7f4ed; --paper-2:#efe9dc;
+      --tide:#1d5b6e; --tide-deep:#0e2f3a; --sand:#c9a86a; --line:#d9d0bf;
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:"Source Sans 3",system-ui,sans-serif;font-size:1.06rem;line-height:1.7;}
+    h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;color:var(--tide-deep);line-height:1.12;font-weight:600;margin:0;}
+    a{color:var(--tide);}
+    img{display:block;max-width:100%;}
+
+    .nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2rem;color:#fff;}
+    .nav__brand{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:700;letter-spacing:.02em;color:#fff;text-decoration:none;}
+    .nav__brand small{display:block;font-family:"Source Sans 3",sans-serif;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);font-weight:600;}
+
+    .hero{position:relative;min-height:96vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:#0e2f3a;}
+    .hero__media{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
+    .hero__overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(14,47,58,.5) 0%,rgba(14,47,58,.8) 100%);}
+    .hero__in{position:relative;z-index:2;max-width:840px;padding:2rem;}
+    .hero .eyebrow{text-transform:uppercase;letter-spacing:.26em;font-size:.78rem;font-weight:600;color:var(--sand);margin-bottom:1rem;}
+    .hero h1{font-size:clamp(2.8rem,8vw,5.5rem);color:#fff;}
+    .hero p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.2rem,3vw,1.7rem);color:#eadfca;margin:1rem auto 2rem;max-width:640px;}
+    .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;padding:.85rem 1.7rem;border-radius:8px;font-family:inherit;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;}
+    .btn--donate{background:#00b15c;color:#fff;}
+    .btn--ghost{border-color:#fff;color:#fff;}
+
+    section{padding:4.5rem 1.5rem;}
+    .wrap{max-width:820px;margin:0 auto;}
+    h2.head{font-size:clamp(1.9rem,5vw,2.6rem);margin-bottom:.4rem;}
+    h2.head::before{content:"";display:block;width:48px;height:3px;background:var(--sand);margin-bottom:1rem;border-radius:2px;}
+    .lead{font-size:1.18rem;}
+
+    .band{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+      background:linear-gradient(rgba(14,47,58,.45),rgba(14,47,58,.6)),url('img/band-ice-eagles.jpg') center/cover fixed no-repeat;}
+    .band blockquote{max-width:760px;margin:0;padding:2rem;font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,4vw,2.6rem);font-style:italic;line-height:1.3;color:#fff;}
+
+    .focus{background:#fff;}
+    .grid{max-width:1000px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
+    .card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper);}
+    .card img{height:190px;width:100%;object-fit:cover;}
+    .card .body{padding:1.1rem 1.3rem;}
+    .card h3{font-size:1.4rem;margin-bottom:.4rem;}
+    .card p{margin:0;color:var(--soft);font-size:.98rem;}
+
+    .split{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:2.4rem;align-items:center;}
+    .split img{border-radius:12px;height:100%;max-height:420px;width:100%;object-fit:cover;}
+
+    .cta{position:relative;color:#fff;text-align:center;
+      background:linear-gradient(rgba(14,47,58,.6),rgba(14,47,58,.78)),url('img/cta-rainbow.jpg') center 30%/cover no-repeat;}
+    .cta h2{color:#fff;font-size:clamp(2rem,5vw,3rem);}
+    .cta .lead{max-width:680px;margin:1rem auto 1.8rem;color:#eadfca;}
+    .signup{max-width:540px;margin:1.9rem auto 0;background:rgba(255,255,255,.96);border-radius:10px;padding:1.2rem 1.3rem;text-align:left;}
+    .signup label{display:block;font-weight:600;color:var(--ink);margin-bottom:.6rem;}
+    .signup__row{display:flex;gap:.6rem;flex-wrap:wrap;}
+    .signup input[type=email]{flex:1 1 220px;padding:.8rem 1rem;border:1px solid var(--line);border-radius:8px;font:inherit;color:var(--ink);background:#fff;}
+    .signup input[type=email]:focus{outline:none;border-color:var(--tide);box-shadow:0 0 0 3px rgba(29,91,110,.18);}
+    .btn--signup{background:var(--tide);color:#fff;border:none;}
+    .btn--signup:hover{background:var(--tide-deep);}
+
+    footer{background:var(--tide-deep);color:#bcd0d6;text-align:center;padding:2.5rem 1.5rem;font-size:.85rem;}
+    @media(max-width:720px){.grid{grid-template-columns:1fr;}.split{grid-template-columns:1fr;}.band{background-attachment:scroll;}}
+  </style>
 </head>
 <body>
+  <nav class="nav">
+    <a class="nav__brand" href="#">Mill River Estuary Foundation<small>Southport · Connecticut</small></a>
+  </nav>
+
   <header class="hero">
-    <div class="hero__inner">
-      <p class="eyebrow">Southport &middot; Fairfield County &middot; Connecticut</p>
+    <svg class="hero__media" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <filter id="waterRipple" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.009 0.016" numOctaves="2" seed="7" result="noise">
+            <animate attributeName="baseFrequency" dur="11s" values="0.009 0.016;0.012 0.021;0.009 0.016" repeatCount="indefinite"/>
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <linearGradient id="waterFade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#000"/>
+          <stop offset="56%" stop-color="#000"/>
+          <stop offset="66%" stop-color="#fff"/>
+          <stop offset="100%" stop-color="#fff"/>
+        </linearGradient>
+        <mask id="waterMask"><rect width="1600" height="1000" fill="url(#waterFade)"/></mask>
+      </defs>
+      <image href="img/hero-dam.jpg" width="1600" height="1000" preserveAspectRatio="xMidYMid slice"/>
+      <image href="img/hero-dam.jpg" width="1600" height="1000" preserveAspectRatio="xMidYMid slice" filter="url(#waterRipple)" mask="url(#waterMask)"/>
+    </svg>
+    <div class="hero__overlay"></div>
+    <div class="hero__in">
+      <p class="eyebrow">Preserving a Tidewater Treasure</p>
       <h1>Mill River Estuary Foundation</h1>
-      <p class="hero__tagline hero__mission">The waterway where the Mill River meets Southport Harbor belongs to no one and yet to everyone. Preserving it will require the sustained commitment of neighbors, civic organizations, public officials, and stewards of Fairfield&rsquo;s heritage working together. The Mill River Estuary Foundation invites the support of all who value this special place &mdash; through charitable contributions, volunteer service, and the sharing of expertise &mdash; so that the area may continue to thrive as both a natural refuge, a recreational haven and a treasured link to our past.</p>
-      <a class="scroll-cue" href="#welcome" aria-label="Scroll to content">&#8595;</a>
-    </div>
-    <div class="hero__waves" aria-hidden="true">
-      <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
-        <g class="wave-parallax">
-          <use href="#gentle-wave" x="48" y="0" />
-          <use href="#gentle-wave" x="48" y="3" />
-          <use href="#gentle-wave" x="48" y="5" />
-          <use href="#gentle-wave" x="48" y="7" />
-        </g>
-      </svg>
+      <p>Where the Mill River meets Southport Harbor — a living estuary held in trust for those who come after us.</p>
+      <div class="btns">
+        <a class="btn btn--donate" href="#cta">&#9829;&nbsp; Donate on GoFundMe</a>
+        <a class="btn btn--ghost" href="#mission">Our Mission</a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section id="welcome" class="section section--intro">
-      <h2>The Mission:</h2>
-      <p class="lead">
-        The Mill River Estuary Foundation is being formed exclusively for charitable and
-        educational purposes within the meaning of Section 501(c)(3) of the Internal Revenue
-        Code of 1986. Its purpose is to preserve, protect, restore, and beautify this unique
-        stretch of waterway and its environs, from just Perry&rsquo;s Mill Pond downstream
-        through upper Southport Harbor for the benefit of the public and for future generations.
-      </p>
-      <p class="lead">
-        To advance this mission, the Foundation will raise and deploy funds to maintain, repair,
-        and improve the waterway and its surroundings; to support the natural habitats and
-        wildlife that depend on this estuary; to promote public education and appreciation of the
-        area&rsquo;s ecological and historical significance; and to partner with the Town of
-        Fairfield, the State of Connecticut, Department of Energy and Environmental Protection,
-        and other nonprofit and civic organizations that share these goals.
-      </p>
-    </section>
+  <section id="mission" class="wrap">
+    <h2 class="head">The Mission</h2>
+    <p class="lead">The Mill River Estuary Foundation is being formed exclusively for charitable and
+      educational purposes under Section 501(c)(3). Its purpose is to preserve, protect, restore, and
+      beautify this unique stretch of waterway and its environs — from Perry’s Mill Pond downstream
+      through upper Southport Harbor — for the benefit of the public and for future generations.</p>
+  </section>
 
-    <section class="section">
-      <h2>Our Focus:</h2>
-      <p>
-        <strong>The Water:</strong> Where Long Island Sound&rsquo;s tides meet the Mill River&rsquo;s
-        fresh flow, a brackish estuary sustains rich plant, marine, and bird life. Keeping its water
-        levels balanced is vital to that future &mdash; which is why MREF aims to maintain them by
-        restoring the historic Tide Mill Dam.
-      </p>
-      <p>
-        <strong>Aquatic Life:</strong> Often called the &ldquo;nurseries of the sea,&rdquo; estuaries
-        are where countless creatures spawn and mature. MREF aims to ease passage for migrating
-        herring, alewives, and eels, and to support blue crabs, diamondback terrapins, and the many
-        species that keep Mill River&rsquo;s waters diverse and healthy.
-      </p>
-      <p>
-        <strong>The Banks.</strong> Native marsh grasses and seagrasses filter sediment and runoff
-        before it reaches the harbor. By controlling invasives, planting more natives, and reducing
-        sedimentation in the Upper Harbor, MREF works to protect the banks and help oysters, marine
-        life, and recreation thrive there.
-      </p>
-      <p>
-        <strong>Avian Life:</strong> The estuary&rsquo;s rich ecosystem is home to many notable birds
-        &mdash; Bald Eagles, Ospreys, Cormorants, Swans, Blue Herons and Egrets, along with countless
-        waterfowl, ducks, and geese. As the health and diversity of the waterway improve, so will the
-        bird life that depends on it.
-      </p>
-    </section>
+  <div class="band">
+    <blockquote>“The waters where the Mill River meets Southport Harbor belong to no one — and so to all of us.”</blockquote>
+  </div>
 
-    <section class="section">
-      <h2>Our First Priority</h2>
-      <p>
-        The Foundation&rsquo;s first priority is to support the repair and upgrades of the Tide Mill
-        Dam near the eastern portion of the Harbor Road bridge. For more than three centuries, the
-        Tide Mill Dam has regulated the flow of water from the Mill River into Southport Harbor.
-        Over the last several years the dam has fallen into disrepair, which was only exacerbated by
-        the ice floes from this challenging winter of 2025/2026. The result has troubling
-        consequences: water levels north of the bridge have dropped, disturbed flows downstream have
-        allowed debris and sediment to accumulate, and the navigable channels within the harbor have
-        begun to shift. Restoring this historic structure is essential to the ecological health of
-        the estuary, to the safe navigation of the harbor, and to the preservation of the natural
-        and historical character of the Upper Harbor itself.
-      </p>
-      <p>
-        The Foundation recognizes that the repair of the Tide Mill Dam is a substantial undertaking
-        that will require close coordination with, and the approvals of, multiple regulatory
-        authorities &mdash; including the Connecticut Department of Energy and Environmental
-        Protection (including its Dam Safety and Inland Water Resources programs), the United States
-        Army Corps of Engineers, and the Town of Fairfield, among others. The Foundation is
-        committed to working cooperatively with each of these authorities and with all other
-        stakeholders to ensure that any repair work is undertaken responsibly, lawfully, and in a
-        manner that protects both the resource and the public interest.
-      </p>
-    </section>
+  <section class="focus">
+    <div class="wrap"><h2 class="head">Our Focus</h2></div>
+    <div class="grid">
+      <article class="card">
+        <img src="img/water-cormorant.jpg" alt="A cormorant on the snag, the Tide Mill Dam, and the mill building" />
+        <div class="body"><h3>The Water</h3><p>Where Long Island Sound’s tides meet the Mill River’s fresh flow, a brackish estuary sustains rich plant, marine, and bird life. Keeping its water levels balanced is vital to that future — which is why MREF aims to maintain them by restoring the historic Tide Mill Dam.</p></div>
+      </article>
+      <article class="card">
+        <img src="img/aquatic-crab.jpg" alt="Blue crab in the shallows" />
+        <div class="body"><h3>Aquatic Life</h3><p>Often called the “nurseries of the sea,” estuaries are where countless creatures spawn and mature. MREF aims to ease passage for migrating herring, alewives, and eels, and to support blue crabs, diamondback terrapins, and the many species that keep Mill River’s waters diverse and healthy.</p></div>
+      </article>
+      <article class="card">
+        <img src="img/banks-swans.jpg" alt="Swans by the reeds" />
+        <div class="body"><h3>The Banks</h3><p>Native marsh grasses and seagrasses filter sediment and runoff before it reaches the harbor. By controlling invasives, planting more natives, and reducing sedimentation in the Upper Harbor, MREF works to protect the banks and help oysters, marine life, and recreation thrive there.</p></div>
+      </article>
+      <article class="card">
+        <img src="img/avian-eagle.jpg" alt="Bald eagle" />
+        <div class="body"><h3>Avian Life</h3><p>The estuary’s rich ecosystem is home to many notable birds — Bald Eagles, Ospreys, Cormorants, Swans, Blue Herons and Egrets, along with countless waterfowl, ducks, and geese. As the health and diversity of the waterway improve, so will the bird life that depends on it.</p></div>
+      </article>
+    </div>
+  </section>
 
-    <section class="section">
-      <h2>A Call to Join Us</h2>
-      <p class="lead">
-        We are only stewards of this special place, holding it in trust for those who come after us &mdash;
-        and its future depends on what we do now. Whether through a charitable gift, a few hours of
-        volunteer time, or the sharing of professional expertise, your support will help restore the
-        dam, protect this living estuary, and preserve a treasured link to our past. Here is how you
-        can help today:
-      </p>
-
-      <div class="cta-actions">
-        <!-- TODO: replace href with the real GoFundMe campaign URL -->
-        <a class="btn btn--donate" href="https://www.gofundme.com/REPLACE-WITH-CAMPAIGN" target="_blank" rel="noopener">
-          &#9829;&nbsp; Donate on GoFundMe
-        </a>
-        <!-- TODO: replace with the real contact phone number (digits in href, no spaces) -->
-        <a class="btn btn--phone" href="tel:+12030000000">
-          &#9742;&nbsp; (203) 000-0000
-        </a>
+  <section>
+    <div class="split">
+      <img src="img/hero-dam.jpg" alt="The Tide Mill Dam" />
+      <div>
+        <h2 class="head">Our First Priority</h2>
+        <p>For more than three centuries the Tide Mill Dam has regulated the flow of water from the
+          Mill River into Southport Harbor. Years of disrepair — worsened by the ice floes of winter
+          2025/2026 — have dropped water levels and let sediment accumulate. Restoring this historic
+          structure is our first and most urgent undertaking.</p>
       </div>
+    </div>
+  </section>
 
+  <section id="cta" class="cta">
+    <div class="wrap">
+      <h2>A Call to Join Us</h2>
+      <p class="lead">We are only stewards of this special place, holding it in trust for those who come
+        after us. Your support will help restore the dam, protect this living estuary, and preserve a
+        treasured link to our past.</p>
+      <div class="btns">
+        <!-- TODO: replace href with the real GoFundMe campaign URL -->
+        <a class="btn btn--donate" href="https://www.gofundme.com/REPLACE-WITH-CAMPAIGN" target="_blank" rel="noopener">&#9829;&nbsp; Donate on GoFundMe</a>
+        <!-- TODO: replace with the real contact phone number -->
+        <a class="btn btn--ghost" href="tel:+12030000000">&#9742;&nbsp; (203) 000-0000</a>
+      </div>
       <form class="signup" action="https://formspree.io/f/xlgkqaew" method="POST">
-        <label for="signup-email">Join our mailing list &mdash; stay informed about the estuary and our work.</label>
+        <label for="signup-email">Join our mailing list — stay informed about the estuary and our work.</label>
         <input type="hidden" name="_subject" value="New Mill River mailing-list signup">
         <div class="signup__row">
           <input id="signup-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
           <button type="submit" class="btn btn--signup">Sign Up</button>
         </div>
       </form>
-    </section>
+    </div>
+  </section>
 
-    <section class="section section--feature">
-      <h2>The Tide Mill &amp; the Grist Mill Dam</h2>
-      <p>
-        Around <strong>1722</strong>, a <strong>grist mill</strong> was raised in the middle of the
-        Mill River, on what is now Harbor Road. Unlike the brook-fed water mills of the inland
-        hills, this was a <strong>tide mill</strong> &mdash; it borrowed its power not from a
-        falling stream but from the rise and fall of the sea itself.
-      </p>
-      <p>
-        A <strong>dam</strong> stretched across the tidal river, fitted with one-way gates. Each
-        rising tide pushed seawater through the gates to fill a mill pond behind the dam. At high
-        water the gates swung shut, trapping the pond. Then, as the tide ebbed, the miller opened a
-        sluice and let the captured water rush back out &mdash; turning a great wheel that drove the
-        millstones grinding the neighborhood&rsquo;s corn and grain into meal and flour. The mill
-        ground grain on this spot for well over two hundred years.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>How a tide mill keeps time with the sea</h2>
-      <ol class="steps">
-        <li>
-          <span class="steps__num">1</span>
-          <div>
-            <h3>Flood tide fills the pond</h3>
-            <p>The incoming tide flows through the dam&rsquo;s gates and quietly fills the mill pond.</p>
-          </div>
-        </li>
-        <li>
-          <span class="steps__num">2</span>
-          <div>
-            <h3>High tide locks the gates</h3>
-            <p>At the top of the tide the gates close on their own, holding a pond full of seawater.</p>
-          </div>
-        </li>
-        <li>
-          <span class="steps__num">3</span>
-          <div>
-            <h3>Ebb tide turns the wheel</h3>
-            <p>As the sea drops, the miller releases the pond through a sluice; the rushing water spins the wheel and the stones grind.</p>
-          </div>
-        </li>
-        <li>
-          <span class="steps__num">4</span>
-          <div>
-            <h3>The schedule shifts daily</h3>
-            <p>Because the tides arrive about 50 minutes later each day, the miller&rsquo;s working hours slid around the clock &mdash; grain was ground twice a day, whenever the sea allowed.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section class="section section--facts">
-      <h2>A few interesting facts</h2>
-      <ul class="facts">
-        <li><span class="facts__year">1637</span> The Pequot War&rsquo;s &ldquo;Great Swamp Fight&rdquo; took place nearby; survivors took refuge among the Sasqua who lived along these waters.</li>
-        <li><span class="facts__year">1639</span> English settlers founded the village at the river&rsquo;s mouth and called it &ldquo;Mill River.&rdquo;</li>
-        <li><span class="facts__year">1722</span> A tide-powered grist mill was built in the river on today&rsquo;s Harbor Road.</li>
-        <li><span class="facts__year">1830s</span> &ldquo;Mill River&rdquo; became &ldquo;Southport&rdquo; as the harbor grew into a thriving shipping port.</li>
-        <li><span class="facts__year">~1950s</span> After more than two centuries, the old mill finally fell silent &mdash; the dam and tidal pond still mark the harbor today.</li>
-      </ul>
-    </section>
-
-    <section class="section section--note">
-      <p class="note">
-        <strong>Test page.</strong> This is the first published page for
-        <a href="https://www.millriverct.com">www.millriverct.com</a>, deployed automatically
-        from source control. More to come.
-      </p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p class="footer__title">Mill River &middot; Southport, Connecticut</p>
-    <p class="footer__sources">
-      Sources:
-      <a href="https://en.wikipedia.org/wiki/Mill_River_(Fairfield,_Connecticut)">Mill River (Fairfield, CT)</a> &middot;
-      <a href="https://connecticutmills.org/find/details/sturges-tide-mill">Sturges Tide Mill, ConnecticutMills.org</a> &middot;
-      <a href="https://en.wikipedia.org/wiki/Southport_Historic_District_(Fairfield,_Connecticut)">Southport Historic District</a> &middot;
-      <a href="https://newengland.com/travel/connecticut/southport-connecticut/">NewEngland.com</a>
-    </p>
-    <p class="footer__meta">Built as a welcome page &middot; Hosted on Cloudflare Pages</p>
-  </footer>
+  <footer>Mill River Estuary Foundation · Southport, Connecticut</footer>
 </body>
 </html>
