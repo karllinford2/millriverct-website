@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mill River Estuary Foundation — Cinematic (#4)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --ink:#16222b; --paper:#f7f4ed; --tide:#1d5b6e; --tide-deep:#0e2f3a;
+      --sand:#c9a86a; --line:#d9d0bf;
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:"Source Sans 3",system-ui,sans-serif;font-size:1.06rem;line-height:1.7;}
+    h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;color:var(--tide-deep);line-height:1.12;font-weight:600;margin:0;}
+    a{color:var(--tide);}
+    img{display:block;max-width:100%;}
+
+    /* top bar */
+    .nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2rem;color:#fff;}
+    .nav__brand{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:700;letter-spacing:.02em;color:#fff;text-decoration:none;}
+    .nav__brand small{display:block;font-family:"Source Sans 3",sans-serif;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);font-weight:600;}
+
+    /* hero */
+    .hero{position:relative;min-height:96vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+      background:linear-gradient(180deg,rgba(14,47,58,.55) 0%,rgba(14,47,58,.78) 100%),
+        url('../Pictures/IMG_2279.JPG') center 60%/cover no-repeat;}
+    .hero__in{max-width:840px;padding:2rem;}
+    .hero .eyebrow{text-transform:uppercase;letter-spacing:.26em;font-size:.78rem;font-weight:600;color:var(--sand);margin-bottom:1rem;}
+    .hero h1{font-size:clamp(2.8rem,8vw,5.5rem);color:#fff;}
+    .hero p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.2rem,3vw,1.7rem);color:#eadfca;margin:1rem auto 2rem;max-width:640px;}
+    .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;padding:.85rem 1.7rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid transparent;}
+    .btn--donate{background:#00b15c;color:#fff;}
+    .btn--ghost{border-color:#fff;color:#fff;}
+
+    section{padding:4.5rem 1.5rem;}
+    .wrap{max-width:820px;margin:0 auto;}
+    h2.head{font-size:clamp(1.9rem,5vw,2.6rem);margin-bottom:.4rem;}
+    h2.head::before{content:"";display:block;width:48px;height:3px;background:var(--sand);margin-bottom:1rem;border-radius:2px;}
+    .lead{font-size:1.18rem;}
+
+    /* full-bleed quote band */
+    .band{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+      background:linear-gradient(rgba(14,47,58,.45),rgba(14,47,58,.6)),url('../Pictures/DSC_2146%20Cropped.jpg') center/cover fixed no-repeat;}
+    .band blockquote{max-width:760px;margin:0;padding:2rem;font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,4vw,2.6rem);font-style:italic;line-height:1.3;color:#fff;}
+
+    /* focus grid */
+    .focus{background:#fff;}
+    .grid{max-width:1000px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
+    .card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper);}
+    .card img{height:190px;width:100%;object-fit:cover;}
+    .card .body{padding:1.1rem 1.3rem;}
+    .card h3{font-size:1.4rem;margin-bottom:.4rem;}
+    .card p{margin:0;color:#41535f;font-size:.98rem;}
+
+    /* priority split */
+    .split{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:2.4rem;align-items:center;}
+    .split img{border-radius:12px;height:100%;max-height:420px;width:100%;object-fit:cover;}
+
+    /* CTA over rainbow */
+    .cta{position:relative;color:#fff;text-align:center;
+      background:linear-gradient(rgba(14,47,58,.6),rgba(14,47,58,.75)),url('../Pictures/IMG_6918%20Cropped.jpg') center 30%/cover no-repeat;}
+    .cta h2{color:#fff;font-size:clamp(2rem,5vw,3rem);}
+    .cta .lead{max-width:680px;margin:1rem auto 1.8rem;color:#eadfca;}
+
+    footer{background:var(--tide-deep);color:#bcd0d6;text-align:center;padding:2.5rem 1.5rem;font-size:.85rem;}
+    @media(max-width:720px){.grid{grid-template-columns:1fr;}.split{grid-template-columns:1fr;}.band{background-attachment:scroll;}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="nav__brand" href="#">Mill River Estuary Foundation<small>Southport · Connecticut</small></a>
+    <a class="btn btn--donate" href="#cta">Donate</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero__in">
+      <p class="eyebrow">Preserving a Tidewater Treasure</p>
+      <h1>Mill River Estuary Foundation</h1>
+      <p>Where the Mill River meets Southport Harbor — a living estuary held in trust for those who come after us.</p>
+      <div class="btns">
+        <a class="btn btn--donate" href="#cta">&#9829;&nbsp; Donate on GoFundMe</a>
+        <a class="btn btn--ghost" href="#mission">Our Mission</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="mission" class="wrap">
+    <h2 class="head">The Mission</h2>
+    <p class="lead">The Mill River Estuary Foundation is being formed exclusively for charitable and
+      educational purposes under Section 501(c)(3). Its purpose is to preserve, protect, restore, and
+      beautify this unique stretch of waterway and its environs — from Perry’s Mill Pond downstream
+      through upper Southport Harbor — for the benefit of the public and for future generations.</p>
+  </section>
+
+  <div class="band">
+    <blockquote>“The waters where the Mill River meets Southport Harbor belong to no one — and so to all of us.”</blockquote>
+  </div>
+
+  <section class="focus">
+    <div class="wrap"><h2 class="head">Our Focus</h2></div>
+    <div class="grid">
+      <article class="card">
+        <img src="../Pictures/IMG_2279.JPG" alt="Tide Mill Dam and Harbor Road bridge" />
+        <div class="body"><h3>The Water</h3><p>Balancing daily saltwater tides with the river’s fresh flow keeps this brackish estuary — and the historic Tide Mill Dam that regulates it — healthy.</p></div>
+      </article>
+      <article class="card">
+        <img src="../Pictures/IMG_6473.JPG" alt="Blue crab in the shallows" />
+        <div class="body"><h3>Aquatic Life</h3><p>A nursery of the sea — herring, alewives, eels, blue crabs and terrapins shelter and spawn in these sheltered shallows.</p></div>
+      </article>
+      <article class="card">
+        <img src="../Pictures/IMG_1729.JPG" alt="Swans by the reeds" />
+        <div class="body"><h3>The Banks</h3><p>Native grasses filter runoff and hold the banks; restoring them controls invasives and protects the harbor’s breeding grounds.</p></div>
+      </article>
+      <article class="card">
+        <img src="../Pictures/DSC_0501%20Cropped.jpg" alt="Bald eagle in flight over the water" />
+        <div class="body"><h3>Avian Life</h3><p>Bald eagles, ospreys, herons, egrets and swans all depend on the health and diversity of the estuary.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="split">
+      <img src="../Pictures/IMG_2279.JPG" alt="The Tide Mill Dam" />
+      <div>
+        <h2 class="head">Our First Priority</h2>
+        <p>For more than three centuries the Tide Mill Dam has regulated the flow of water from the
+          Mill River into Southport Harbor. Years of disrepair — worsened by the ice floes of winter
+          2025/2026 — have dropped water levels and let sediment accumulate. Restoring this historic
+          structure is our first and most urgent undertaking.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="cta">
+    <div class="wrap">
+      <h2>A Call to Join Us</h2>
+      <p class="lead">We are only stewards of this special place, holding it in trust for those who come
+        after us. Your support will help restore the dam, protect this living estuary, and preserve a
+        treasured link to our past.</p>
+      <div class="btns">
+        <a class="btn btn--donate" href="#">&#9829;&nbsp; Donate on GoFundMe</a>
+        <a class="btn btn--ghost" href="tel:+12030000000">&#9742;&nbsp; (203) 000-0000</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>Mill River Estuary Foundation · Southport, Connecticut</footer>
+</body>
+</html>
