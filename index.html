@@ -71,7 +71,13 @@
     .btn--signup:hover{background:var(--tide-deep);}
 
     footer{background:var(--tide-deep);color:#bcd0d6;text-align:center;padding:2.5rem 1.5rem;font-size:.85rem;}
-    @media(max-width:720px){.grid{grid-template-columns:1fr;}.split{grid-template-columns:1fr;}.band{background-attachment:scroll;}}
+    @media(max-width:720px){
+      .grid{grid-template-columns:1fr;}
+      .split{grid-template-columns:1fr;}
+      .band{flex-direction:column;align-items:stretch;justify-content:flex-start;background:var(--tide-deep);min-height:0;}
+      .band::before{content:"";display:block;width:100%;aspect-ratio:1.05/1;background:linear-gradient(rgba(14,47,58,.1),rgba(14,47,58,.2)),url('img/band-eagles-mobile.jpg') center/cover no-repeat;}
+      .band blockquote{padding:2.2rem 1.25rem;}
+    }
   </style>
 </head>
 <body>
@@ -120,7 +126,7 @@
   </section>
 
   <div class="band">
-    <blockquote>“The waters where the Mill River meets Southport Harbor belong to no one — and so to all of us.”</blockquote>
+    <blockquote>The waters where the Mill River meets Southport Harbor belong to no one — and yet to all of us</blockquote>
   </div>
 
   <section class="focus">
