@@ -20,32 +20,53 @@
     a{color:var(--tide);}
     img{display:block;max-width:100%;}
 
-    .nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2rem;color:#fff;}
-    .nav__brand{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:700;letter-spacing:.02em;color:#fff;text-decoration:none;}
-    .nav__brand small{display:block;font-family:"Source Sans 3",sans-serif;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);font-weight:600;}
+    /* ---------- sticky nav ---------- */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+      padding:.7rem 1.6rem;color:#fff;background:rgba(14,47,58,.88);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08);}
+    .nav__brand{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-weight:700;letter-spacing:.02em;color:#fff;text-decoration:none;line-height:1.1;}
+    .nav__brand small{display:block;font-family:"Source Sans 3",sans-serif;font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);font-weight:600;}
+    .nav__links{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;justify-content:flex-end;}
+    .nav__links a{color:#e7e1d2;text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;}
+    .nav__links a:hover{color:var(--sand);}
+    .nav__links a.nav__donate{background:#00b15c;color:#fff;padding:.45rem 1rem;border-radius:6px;letter-spacing:.1em;}
+    .nav__links a.nav__donate:hover{background:#009a4f;color:#fff;}
 
+    /* ---------- hero ---------- */
     .hero{position:relative;min-height:96vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:#0e2f3a;}
     .hero__media{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
     .hero__overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(14,47,58,.5) 0%,rgba(14,47,58,.8) 100%);}
     .hero__in{position:relative;z-index:2;max-width:840px;padding:2rem;}
     .hero .eyebrow{text-transform:uppercase;letter-spacing:.26em;font-size:.78rem;font-weight:600;color:var(--sand);margin-bottom:1rem;}
     .hero h1{font-size:clamp(2.8rem,8vw,5.5rem);color:#fff;}
-    .hero p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.2rem,3vw,1.7rem);color:#eadfca;margin:1rem auto 2rem;max-width:640px;}
+    .hero p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(.6rem,2.9vw,1.7rem);color:#eadfca;margin:1rem auto 2rem;max-width:100%;white-space:nowrap;}
+    @media(max-width:340px){.hero p{font-size:.56rem;}}
     .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-    .btn{display:inline-flex;align-items:center;padding:.85rem 1.7rem;border-radius:8px;font-family:inherit;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.7rem;border-radius:8px;font-family:inherit;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;}
     .btn--donate{background:#00b15c;color:#fff;}
     .btn--ghost{border-color:#fff;color:#fff;}
 
     section{padding:4.5rem 1.5rem;}
     .wrap{max-width:820px;margin:0 auto;}
+    .wrap--wide{max-width:1040px;margin:0 auto;}
     h2.head{font-size:clamp(1.9rem,5vw,2.6rem);margin-bottom:.4rem;}
     h2.head::before{content:"";display:block;width:48px;height:3px;background:var(--sand);margin-bottom:1rem;border-radius:2px;}
+    .kicker{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;font-weight:600;color:var(--sand);margin:0 0 .5rem;}
     .lead{font-size:1.18rem;}
 
+    /* ---------- impact stats ---------- */
+    .stats{background:var(--tide-deep);color:#fff;padding:2.6rem 1.5rem;}
+    .stats__grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;text-align:center;}
+    .stat b{display:block;font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;color:var(--sand);line-height:1.05;}
+    .stat span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:#bcd0d6;font-weight:600;}
+
+    .taxnote{margin-top:1.4rem;padding:.9rem 1.1rem;background:var(--paper-2);border-left:4px solid var(--sand);border-radius:4px;font-size:.92rem;color:var(--soft);}
+
+    /* ---------- quote band ---------- */
     .band{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
       background:linear-gradient(rgba(14,47,58,.45),rgba(14,47,58,.6)),url('img/band-ice-eagles.jpg') center/cover fixed no-repeat;}
     .band blockquote{max-width:760px;margin:0;padding:2rem;font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,4vw,2.6rem);font-style:italic;line-height:1.3;color:#fff;}
 
+    /* ---------- focus cards ---------- */
     .focus{background:#fff;}
     .grid{max-width:1000px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
     .card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper);}
@@ -55,9 +76,81 @@
     .card h3{font-size:1.4rem;margin-bottom:.4rem;}
     .card p{margin:0;color:var(--soft);font-size:.98rem;}
 
+    /* ---------- priority project ---------- */
     .split{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:2.4rem;align-items:center;}
     .split img{border-radius:12px;height:100%;max-height:420px;width:100%;object-fit:cover;}
+    .roadmap{max-width:1040px;margin:2.6rem auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:step;}
+    .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.2rem 1.3rem;position:relative;}
+    .step::before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:50%;
+      background:var(--tide);color:#fff;font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.2rem;margin-bottom:.7rem;}
+    .step h3{font-size:1.14rem;margin-bottom:.35rem;}
+    .step p{margin:0;font-size:.9rem;color:var(--soft);}
+    .progress{max-width:1040px;margin:2.2rem auto 0;}
+    .progress__label{display:flex;justify-content:space-between;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--soft);margin-bottom:.45rem;}
+    .progress__bar{height:14px;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+    .progress__fill{height:100%;width:20%;background:linear-gradient(90deg,var(--tide),var(--tide-deep));border-radius:999px;}
 
+    /* ---------- donate ---------- */
+    .donate{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+    .donate__grid{max-width:1040px;margin:2.2rem auto 0;display:grid;grid-template-columns:1fr 1.15fr;gap:2.6rem;align-items:start;}
+    .impact{list-style:none;margin:0;padding:0;}
+    .impact li{display:flex;gap:.9rem;padding:.75rem 0;border-top:1px dashed var(--line);color:var(--soft);font-size:.98rem;align-items:baseline;}
+    .impact li:first-child{border-top:none;}
+    .impact b{flex:0 0 4.6rem;font-family:"Cormorant Garamond",serif;font-size:1.25rem;color:var(--tide);font-weight:700;}
+    .dform{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.5rem;}
+    .dform h3{font-size:1.35rem;margin-bottom:1rem;}
+    .freq{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;}
+    .freq button{flex:1 1 auto;padding:.55rem .9rem;border:1px solid var(--line);background:#fff;border-radius:8px;font:inherit;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);cursor:pointer;}
+    .freq button.sel{background:var(--tide);border-color:var(--tide);color:#fff;}
+    .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:1rem;}
+    .tiers button{padding:.7rem .4rem;border:1px solid var(--line);background:#fff;border-radius:10px;font:inherit;cursor:pointer;text-align:center;}
+    .tiers button b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.3rem;color:var(--tide-deep);}
+    .tiers button span{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-weight:600;}
+    .tiers button.sel{border-color:var(--tide);background:#eaf2f4;box-shadow:0 0 0 2px rgba(29,91,110,.25);}
+    .dform label{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--soft);margin:.9rem 0 .3rem;}
+    .dform select,.dform input[type=number]{width:100%;padding:.7rem .9rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff;color:var(--ink);}
+    .dform .honor{display:flex;align-items:center;gap:.55rem;margin-top:1rem;font-size:.92rem;color:var(--soft);}
+    .dform .honor input{width:1.05rem;height:1.05rem;}
+    .dform .proceed{width:100%;margin-top:1.3rem;background:#00b15c;color:#fff;border:none;}
+    .dform .secure{margin:.8rem 0 0;text-align:center;font-size:.78rem;color:var(--soft);}
+
+    /* ---------- events ---------- */
+    .events{background:var(--paper);}
+    .events__grid{max-width:1040px;margin:2.2rem auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
+    .event{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.3rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;}
+    .event .date{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--tide);}
+    .event h3{font-size:1.3rem;}
+    .event p{margin:0;color:var(--soft);font-size:.95rem;flex:1;}
+    .event .foot{display:flex;justify-content:space-between;align-items:center;margin-top:.7rem;}
+    .event .tag{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--sand);border:1px solid var(--line);padding:.25rem .6rem;border-radius:999px;}
+    .event a.rsvp{font-size:.85rem;font-weight:600;}
+
+    /* ---------- volunteer ---------- */
+    .vol{background:var(--tide-deep);color:#dce8ec;}
+    .vol h2.head,.vol h3{color:#fff;}
+    .vol .kicker{color:var(--sand);}
+    .roles{max-width:1040px;margin:2.2rem auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
+    .role{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:1.1rem 1.2rem;}
+    .role h3{font-size:1.18rem;margin-bottom:.3rem;}
+    .role p{margin:0;font-size:.9rem;color:#bcd0d6;}
+    .vform{max-width:680px;margin:0 auto;background:rgba(255,255,255,.97);border-radius:14px;padding:1.6rem;color:var(--ink);}
+    .vform h3{color:var(--tide-deep);font-size:1.4rem;margin-bottom:1rem;}
+    .vform .row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+    .vform label{display:block;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--soft);margin:.8rem 0 .3rem;}
+    .vform input[type=text],.vform input[type=email],.vform input[type=tel],.vform textarea{width:100%;padding:.7rem .9rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff;color:var(--ink);}
+    .vform textarea{min-height:90px;resize:vertical;}
+    .vform .checks{display:grid;grid-template-columns:1fr 1fr;gap:.35rem .9rem;margin-top:.3rem;}
+    .vform .checks label{display:flex;align-items:center;gap:.5rem;margin:0;font-size:.88rem;letter-spacing:0;text-transform:none;font-weight:400;color:var(--ink);}
+    .vform .submit{width:100%;margin-top:1.2rem;background:var(--tide);color:#fff;border:none;}
+    .vform .submit:hover{background:var(--tide-deep);}
+
+    /* ---------- partners ---------- */
+    .partners{background:#fff;border-top:1px solid var(--line);padding:2.6rem 1.5rem;text-align:center;}
+    .partners .kicker{margin-bottom:1.1rem;}
+    .partners__row{display:flex;flex-wrap:wrap;gap:.7rem 1rem;justify-content:center;max-width:900px;margin:0 auto;}
+    .partners__row span{border:1px solid var(--line);border-radius:999px;padding:.45rem 1.1rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--soft);}
+
+    /* ---------- CTA ---------- */
     .cta{position:relative;color:#fff;text-align:center;min-height:100vh;display:flex;align-items:center;justify-content:center;
       background:linear-gradient(rgba(14,47,58,.5),rgba(14,47,58,.72)),url('img/cta-rainbows.jpg') center 62%/cover no-repeat;}
     .cta h2{color:#fff;font-size:clamp(2rem,5vw,3rem);}
@@ -70,10 +163,41 @@
     .btn--signup{background:var(--tide);color:#fff;border:none;}
     .btn--signup:hover{background:var(--tide-deep);}
 
-    footer{background:var(--tide-deep);color:#bcd0d6;text-align:center;padding:2.5rem 1.5rem;font-size:.85rem;}
+    /* ---------- footer ---------- */
+    footer{background:var(--tide-deep);color:#bcd0d6;padding:3.4rem 1.5rem 2rem;font-size:.9rem;}
+    .foot__grid{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.2rem;}
+    .foot__brand h3{color:#fff;font-size:1.35rem;margin-bottom:.5rem;}
+    .foot__brand p{margin:0 0 1rem;color:#9fb4bc;font-size:.88rem;}
+    .foot__social{display:flex;gap:.6rem;}
+    .foot__social a{display:grid;place-items:center;width:2.1rem;height:2.1rem;border:1px solid rgba(255,255,255,.25);border-radius:50%;color:#dce8ec;text-decoration:none;font-size:.8rem;font-weight:600;}
+    .foot__social a:hover{border-color:var(--sand);color:var(--sand);}
+    footer h4{margin:0 0 .8rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);}
+    footer ul{list-style:none;margin:0;padding:0;}
+    footer li{margin-bottom:.45rem;}
+    footer a{color:#bcd0d6;text-decoration:none;}
+    footer a:hover{color:#fff;}
+    .foot__legal{max-width:1040px;margin:2.4rem auto 0;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.78rem;color:#7e98a2;}
+
+    /* ---------- responsive ---------- */
+    @media(max-width:900px){
+      .roadmap{grid-template-columns:repeat(2,1fr);}
+      .donate__grid{grid-template-columns:1fr;}
+      .foot__grid{grid-template-columns:1fr 1fr;}
+    }
     @media(max-width:720px){
+      .nav{padding:.6rem 1rem;}
+      .nav__links{gap:.7rem;}
+      .nav__links a:not(.nav__donate){display:none;}
       .grid{grid-template-columns:1fr;}
       .split{grid-template-columns:1fr;}
+      .stats__grid{grid-template-columns:1fr;gap:1.1rem;}
+      .events__grid{grid-template-columns:1fr;}
+      .roles{grid-template-columns:1fr;}
+      .vform .row{grid-template-columns:1fr;}
+      .vform .checks{grid-template-columns:1fr;}
+      .tiers{grid-template-columns:repeat(2,1fr);}
+      .roadmap{grid-template-columns:1fr;}
+      .foot__grid{grid-template-columns:1fr;}
       .band{flex-direction:column;align-items:stretch;justify-content:flex-start;background:var(--tide-deep);min-height:0;}
       .band::before{content:"";display:block;width:100%;aspect-ratio:1.05/1;background:linear-gradient(rgba(14,47,58,.1),rgba(14,47,58,.2)),url('img/band-eagles-mobile.jpg') center/cover no-repeat;}
       .band blockquote{padding:2.2rem 1.25rem;}
@@ -82,10 +206,18 @@
 </head>
 <body>
   <nav class="nav">
-    <a class="nav__brand" href="#">Mill River Estuary Foundation<small>Southport · Connecticut</small></a>
+    <a class="nav__brand" href="#top">Mill River Estuary Foundation<small>Southport · Connecticut</small></a>
+    <div class="nav__links">
+      <a href="#mission">Mission</a>
+      <a href="#estuary">The Estuary</a>
+      <a href="#priority">Priority Project</a>
+      <a href="#events">Events</a>
+      <a href="#volunteer">Volunteer</a>
+      <a class="nav__donate" href="#donate">Donate</a>
+    </div>
   </nav>
 
-  <header class="hero">
+  <header class="hero" id="top">
     <svg class="hero__media" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <defs>
         <filter id="waterRipple" x="-5%" y="-5%" width="110%" height="110%">
@@ -109,28 +241,40 @@
     <div class="hero__in">
       <p class="eyebrow">Preserving a Tidewater Treasure</p>
       <h1>Mill River Estuary Foundation</h1>
-      <p>Where the Mill River meets Southport Harbor — a living estuary held in trust for those who come after us.</p>
+      <p>A Living Estuary Held in Trust for Those Who Come After Us</p>
       <div class="btns">
-        <a class="btn btn--donate" href="#cta">&#9829;&nbsp; Donate on GoFundMe</a>
+        <a class="btn btn--donate" href="#donate">&#9829;&nbsp; Make a Donation</a>
         <a class="btn btn--ghost" href="#mission">Our Mission</a>
       </div>
     </div>
   </header>
 
+  <div class="stats">
+    <div class="stats__grid">
+      <div class="stat"><b>300+</b><span>Years of History</span></div>
+      <div class="stat"><b>50+</b><span>Species Supported</span></div>
+      <div class="stat"><b>501(c)(3)</b><span>Tax-Exempt</span></div>
+    </div>
+  </div>
+
   <section id="mission" class="wrap">
-    <h2 class="head">The Mission</h2>
+    <p class="kicker">Our Mission</p>
+    <h2 class="head">Preserve, Protect, Restore &amp; Beautify</h2>
     <p class="lead">The Mill River Estuary Foundation is being formed exclusively for charitable and
       educational purposes under Section 501(c)(3). Its purpose is to preserve, protect, restore, and
       beautify this unique stretch of waterway and its environs — from Perry’s Mill Pond downstream
-      through upper Southport Harbor — for the benefit of the public and for future generations.</p>
+      through upper Southport Harbor — for the benefit of the estuary inhabitants, the public, and for future generations.</p>
+    <p class="taxnote"><strong>Tax-deductible contributions.</strong> The Foundation is organized exclusively
+      for charitable and educational purposes under Section 501(c)(3) of the Internal Revenue Code. All
+      donations are tax-deductible to the extent permitted by law.</p>
   </section>
 
   <div class="band">
-    <blockquote>The waters where the Mill River meets Southport Harbor belong to no one — and yet to all of us</blockquote>
+    <blockquote>The Water Where the Mill River Meets Southport Harbor Belongs to No One and Yet to Everyone</blockquote>
   </div>
 
-  <section class="focus">
-    <div class="wrap"><h2 class="head">Our Focus</h2></div>
+  <section id="estuary" class="focus">
+    <div class="wrap"><p class="kicker">The Estuary</p><h2 class="head">Our Focus</h2></div>
     <div class="grid">
       <article class="card">
         <img src="img/water-cormorant.jpg" alt="A cormorant on the snag, the Tide Mill Dam, and the mill building" />
@@ -151,10 +295,11 @@
     </div>
   </section>
 
-  <section>
+  <section id="priority">
     <div class="split">
       <img src="img/first-priority-2.jpg" alt="A turtle and two cormorants, one with wings fully spread, along the Mill River" />
       <div>
+        <p class="kicker">Active Initiative</p>
         <h2 class="head">Our First Priority</h2>
         <p>For more than three centuries the Tide Mill Dam has regulated the flow of water from the
           Mill River into Southport Harbor. Years of disrepair — worsened by the ice floes of winter
@@ -162,7 +307,162 @@
           structure is our first and most urgent undertaking.</p>
       </div>
     </div>
+    <div class="roadmap">
+      <div class="step"><h3>Assessment &amp; Engineering</h3><p>Engaging licensed structural and marine engineers to assess the dam’s condition and develop repair specifications.</p></div>
+      <div class="step"><h3>Regulatory Coordination</h3><p>Working with CT DEEP Dam Safety &amp; Inland Water Resources, the US Army Corps of Engineers, and the Town of Fairfield to obtain required approvals.</p></div>
+      <div class="step"><h3>Community Engagement</h3><p>Hosting public forums and informational sessions, and partnering with civic organizations that share our stewardship goals.</p></div>
+      <div class="step"><h3>Restoration Construction</h3><p>Undertaking lawful, responsible repair that protects the resource, the public, and the character of upper Southport Harbor.</p></div>
+    </div>
+    <div class="progress">
+      <div class="progress__label"><span>Tide Mill Dam Restoration</span><span>20% Funded</span></div>
+      <div class="progress__bar"><div class="progress__fill"></div></div>
+    </div>
   </section>
+
+  <section id="donate" class="donate">
+    <div class="wrap"><p class="kicker">Support the Mission</p><h2 class="head">Make a Gift to the Estuary</h2>
+      <p class="lead">Every contribution, large or small, advances our work to restore the Tide Mill Dam,
+        protect native species, and preserve the natural and historic character of Southport Harbor.</p>
+    </div>
+    <div class="donate__grid">
+      <div>
+        <h3 style="font-size:1.35rem;margin-bottom:.6rem;">Your Impact</h3>
+        <ul class="impact">
+          <li><b>$50</b> supplies native marsh plants for one season of bank restoration</li>
+          <li><b>$150</b> funds water quality monitoring equipment for one month</li>
+          <li><b>$500</b> supports an invasive species removal event for 20 volunteers</li>
+          <li><b>$1,000</b> contributes toward engineering assessments for the Tide Mill Dam</li>
+          <li><b>$5,000+</b> qualifies for Foundation naming recognition and leadership circle membership</li>
+        </ul>
+      </div>
+      <form class="dform" id="donateForm">
+        <h3>Choose Your Gift</h3>
+        <div class="freq" role="group" aria-label="Gift frequency">
+          <button type="button" class="sel" data-freq="One-time">One-time</button>
+          <button type="button" data-freq="Monthly">Monthly</button>
+          <button type="button" data-freq="Annual">Annual Pledge</button>
+        </div>
+        <div class="tiers" role="group" aria-label="Gift amount">
+          <button type="button" data-amt="50"><b>$50</b><span>Marsh Plants</span></button>
+          <button type="button" data-amt="150"><b>$150</b><span>Water Monitoring</span></button>
+          <button type="button" data-amt="500"><b>$500</b><span>Volunteer Event</span></button>
+          <button type="button" class="sel" data-amt="1000"><b>$1,000</b><span>Dam Engineering</span></button>
+          <button type="button" data-amt="5000"><b>$5,000</b><span>Leadership Circle</span></button>
+          <button type="button" data-amt="custom"><b>Other</b><span>Custom Amount</span></button>
+        </div>
+        <div id="customAmtWrap" style="display:none;">
+          <label for="customAmt">Custom amount (USD)</label>
+          <input type="number" id="customAmt" min="1" placeholder="250">
+        </div>
+        <label for="designation">Designate your gift (optional)</label>
+        <select id="designation">
+          <option>Where it’s needed most</option>
+          <option>Tide Mill Dam Restoration</option>
+          <option>Aquatic Habitat &amp; Fish Passage</option>
+          <option>Native Bank Restoration</option>
+          <option>Education &amp; Public Programs</option>
+        </select>
+        <label class="honor" style="letter-spacing:0;text-transform:none;font-weight:400;font-size:.92rem;">
+          <input type="checkbox" id="honorChk"> Make this gift in honor or memory of someone
+        </label>
+        <!-- TODO: replace with the real GoFundMe campaign URL, or swap this flow to a payment
+             processor (Stripe / Donorbox / Givebutter) for true on-site payments -->
+        <button type="submit" class="btn proceed">Proceed to GoFundMe &rarr;</button>
+        <p class="secure">&#128274; 501(c)(3) tax-deductible &middot; Mill River Estuary Foundation &middot; Southport, CT</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="events" class="events">
+    <div class="wrap"><p class="kicker">Community</p><h2 class="head">Upcoming Events</h2>
+      <p class="lead">Join us on the water, at the harbor, and in the community — from hands-on restoration
+        days to educational walks and member gatherings.</p>
+    </div>
+    <div class="events__grid">
+      <!-- TODO: confirm event details/dates and set real registration links -->
+      <article class="event">
+        <span class="date">&#128197; July 22, 2026 &middot; 6:30 PM</span>
+        <h3>Tide Mill Dam: Community Information Night</h3>
+        <p>Hear from engineers and environmental specialists about the state of the historic dam, the
+          restoration plan, and how the community can participate in this landmark effort.</p>
+        <div class="foot"><span class="tag">Public Meeting</span><a class="rsvp" href="mailto:info@millriverct.com?subject=RSVP%3A%20Community%20Information%20Night%20(July%2022)">Attend Free &rarr;</a></div>
+      </article>
+      <article class="event">
+        <span class="date">&#128197; August 9, 2026 &middot; 10:00 AM</span>
+        <h3>Water Quality Monitoring Workshop</h3>
+        <p>Learn to collect and analyze water samples from the estuary. Training led by CT DEEP partners —
+          volunteers who complete this become certified estuary monitors.</p>
+        <div class="foot"><span class="tag">Training</span><a class="rsvp" href="mailto:info@millriverct.com?subject=RSVP%3A%20Water%20Quality%20Workshop%20(August%209)">Join the Team &rarr;</a></div>
+      </article>
+      <article class="event">
+        <span class="date">&#128197; September 20, 2026 &middot; 5:00 PM</span>
+        <h3>Harvest on the Harbor: Founding Gala</h3>
+        <p>Our inaugural fundraising gala celebrating the Southport Harbor community — live music, local food,
+          silent auction, and remarks from conservation leaders. Attire: coastal cocktail.</p>
+        <div class="foot"><span class="tag">Fundraiser</span><a class="rsvp" href="mailto:info@millriverct.com?subject=Tickets%3A%20Harvest%20on%20the%20Harbor%20Gala%20(September%2020)">Purchase Tickets &rarr;</a></div>
+      </article>
+      <article class="event">
+        <span class="date">&#128197; October 11, 2026 &middot; 9:00 AM</span>
+        <h3>Autumn Shoreline Cleanup &amp; Survey</h3>
+        <p>Year-end shoreline cleanup along the Mill River and upper harbor, combined with a sedimentation
+          survey. Families welcome — complimentary breakfast for all participants.</p>
+        <div class="foot"><span class="tag">Volunteer</span><a class="rsvp" href="mailto:info@millriverct.com?subject=Sign-up%3A%20Autumn%20Shoreline%20Cleanup%20(October%2011)">Sign Up &rarr;</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="volunteer" class="vol">
+    <div class="wrap"><p class="kicker">Get Involved</p><h2 class="head">Volunteer with Us</h2>
+      <p class="lead" style="color:#bcd0d6;">Preserving the Mill River estuary requires the sustained commitment
+        of neighbors, civic organizations, and stewards of Fairfield’s heritage. Choose your role.</p>
+    </div>
+    <div class="roles">
+      <div class="role"><h3>&#127807; Field Steward</h3><p>Hands-on work: planting, cleanup, monitoring, and on-the-water events.</p></div>
+      <div class="role"><h3>&#128202; Data &amp; Science</h3><p>Water quality sampling, species surveys, and ecological data collection.</p></div>
+      <div class="role"><h3>&#128227; Outreach &amp; Events</h3><p>Community engagement, social media, photography, and event coordination.</p></div>
+      <div class="role"><h3>&#9878;&#65039; Policy &amp; Advocacy</h3><p>Regulatory liaisons, grant writing, government relations, and legal support.</p></div>
+      <div class="role"><h3>&#128176; Fundraising</h3><p>Donor stewardship, major gifts, event sponsorship, and grant research.</p></div>
+      <div class="role"><h3>&#127891; Education</h3><p>School programs, guided walks, curriculum development, and youth outreach.</p></div>
+    </div>
+    <form class="vform" action="https://formspree.io/f/xlgkqaew" method="POST">
+      <h3>Join the Foundation</h3>
+      <input type="hidden" name="_subject" value="New volunteer application — Mill River Estuary Foundation">
+      <input type="hidden" name="form_type" value="volunteer">
+      <div class="row">
+        <div><label for="v-first">First name</label><input id="v-first" type="text" name="first_name" required></div>
+        <div><label for="v-last">Last name</label><input id="v-last" type="text" name="last_name" required></div>
+      </div>
+      <div class="row">
+        <div><label for="v-email">Email address</label><input id="v-email" type="email" name="email" required></div>
+        <div><label for="v-phone">Phone (optional)</label><input id="v-phone" type="tel" name="phone"></div>
+      </div>
+      <label>Volunteer interests</label>
+      <div class="checks">
+        <label><input type="checkbox" name="interests" value="Field stewardship"> Field stewardship (planting, cleanup)</label>
+        <label><input type="checkbox" name="interests" value="Water quality monitoring"> Water quality monitoring</label>
+        <label><input type="checkbox" name="interests" value="Outreach & social media"> Outreach &amp; social media</label>
+        <label><input type="checkbox" name="interests" value="Grant research & writing"> Grant research &amp; writing</label>
+        <label><input type="checkbox" name="interests" value="Event planning"> Event planning &amp; coordination</label>
+        <label><input type="checkbox" name="interests" value="Youth & school education"> Youth &amp; school education</label>
+        <label><input type="checkbox" name="interests" value="Legal / regulatory expertise"> Legal / regulatory expertise</label>
+      </div>
+      <label for="v-skills">Relevant background or skills (optional)</label>
+      <textarea id="v-skills" name="skills"></textarea>
+      <button type="submit" class="btn submit">Submit Volunteer Application</button>
+    </form>
+  </section>
+
+  <div class="partners">
+    <p class="kicker">Working With</p>
+    <div class="partners__row">
+      <span>CT DEEP</span>
+      <span>US Army Corps of Engineers</span>
+      <span>Town of Fairfield</span>
+      <span>Fairfield Land Trust</span>
+      <span>Long Island Sound Study</span>
+      <span>Southport Harbor Community</span>
+    </div>
+  </div>
 
   <section id="cta" class="cta">
     <div class="wrap">
@@ -171,22 +471,97 @@
         after us. Your support will help restore the dam, protect this living estuary, and preserve a
         treasured link to our past.</p>
       <div class="btns">
-        <!-- TODO: replace href with the real GoFundMe campaign URL -->
-        <a class="btn btn--donate" href="https://www.gofundme.com/REPLACE-WITH-CAMPAIGN" target="_blank" rel="noopener">&#9829;&nbsp; Donate on GoFundMe</a>
+        <a class="btn btn--donate" href="#donate">&#9829;&nbsp; Make a Donation</a>
         <!-- TODO: replace with the real contact phone number -->
         <a class="btn btn--ghost" href="tel:+12030000000">&#9742;&nbsp; (203) 000-0000</a>
       </div>
       <form class="signup" action="https://formspree.io/f/xlgkqaew" method="POST">
-        <label for="signup-email">Join our mailing list — stay informed about the estuary and our work.</label>
+        <label for="signup-email">Stay connected to the harbor — seasonal updates, volunteer opportunities, and news from the estuary.</label>
         <input type="hidden" name="_subject" value="New Mill River mailing-list signup">
         <div class="signup__row">
           <input id="signup-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-          <button type="submit" class="btn btn--signup">Sign Up</button>
+          <button type="submit" class="btn btn--signup">Subscribe</button>
         </div>
       </form>
     </div>
   </section>
 
-  <footer>Mill River Estuary Foundation · Southport, Connecticut</footer>
+  <footer>
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <h3>Mill River Estuary Foundation</h3>
+        <p>Preserving and restoring the Mill River estuary and upper Southport Harbor for the public and
+          future generations of Fairfield, Connecticut.</p>
+        <!-- TODO: set real social profile URLs -->
+        <div class="foot__social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="X">&#120143;</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div>
+        <h4>Organization</h4>
+        <ul>
+          <li><a href="#mission">Our Mission</a></li>
+          <li><a href="#estuary">The Estuary</a></li>
+          <li><a href="#priority">Priority Project</a></li>
+          <li><a href="#events">Events Calendar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="#donate">Make a Donation</a></li>
+          <li><a href="#volunteer">Volunteer</a></li>
+          <li><a href="#cta">Newsletter</a></li>
+          <li><a href="mailto:info@millriverct.com?subject=Corporate%20partnership">Corporate Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <!-- TODO: confirm contact email, phone, and mailing address -->
+          <li><a href="mailto:info@millriverct.com">info@millriverct.com</a></li>
+          <li><a href="tel:+12030000000">(203) 000-0000</a></li>
+          <li>Southport, CT 06890</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__legal">
+      <!-- TODO: add EIN once issued; link Privacy Policy and IRS Form 990 when available -->
+      <span>&copy; 2026 Mill River Estuary Foundation &middot; 501(c)(3) pending &middot; EIN: XX-XXXXXXX</span>
+      <span><a href="#">Privacy Policy</a> &middot; <a href="#">IRS Form 990</a></span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var form = document.getElementById('donateForm');
+      if(!form) return;
+      var freq = 'One-time', amt = '1000';
+      form.querySelectorAll('.freq button').forEach(function(b){
+        b.addEventListener('click', function(){
+          form.querySelectorAll('.freq button').forEach(function(x){ x.classList.remove('sel'); });
+          b.classList.add('sel'); freq = b.dataset.freq;
+        });
+      });
+      var customWrap = document.getElementById('customAmtWrap');
+      form.querySelectorAll('.tiers button').forEach(function(b){
+        b.addEventListener('click', function(){
+          form.querySelectorAll('.tiers button').forEach(function(x){ x.classList.remove('sel'); });
+          b.classList.add('sel'); amt = b.dataset.amt;
+          customWrap.style.display = (amt === 'custom') ? 'block' : 'none';
+        });
+      });
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        /* TODO: replace with the real GoFundMe campaign URL (or a payment processor checkout).
+           Frequency/designation selections are shown here for the donor's reference; GoFundMe
+           collects the actual amount at checkout. */
+        window.open('https://www.gofundme.com/REPLACE-WITH-CAMPAIGN', '_blank', 'noopener');
+      });
+    })();
+  </script>
 </body>
 </html>
