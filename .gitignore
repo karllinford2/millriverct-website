@@ -16,3 +16,6 @@ npm-debug.log*
 # Local Gitea runtime data (must never be committed to the site repo)
 /gitea/
 gitea.exe
+
+# Local backup snapshots (never commit/deploy backup archives)
+/backups/
