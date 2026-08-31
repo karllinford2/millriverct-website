@@ -99,19 +99,9 @@
     .impact b{flex:0 0 4.6rem;font-family:"Cormorant Garamond",serif;font-size:1.25rem;color:var(--tide);font-weight:700;}
     .dform{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.5rem;}
     .dform h3{font-size:1.35rem;margin-bottom:1rem;}
-    .freq{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;}
-    .freq button{flex:1 1 auto;padding:.55rem .9rem;border:1px solid var(--line);background:#fff;border-radius:8px;font:inherit;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);cursor:pointer;}
-    .freq button.sel{background:var(--tide);border-color:var(--tide);color:#fff;}
-    .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:1rem;}
-    .tiers button{padding:.7rem .4rem;border:1px solid var(--line);background:#fff;border-radius:10px;font:inherit;cursor:pointer;text-align:center;}
-    .tiers button b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.3rem;color:var(--tide-deep);}
-    .tiers button span{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-weight:600;}
-    .tiers button.sel{border-color:var(--tide);background:#eaf2f4;box-shadow:0 0 0 2px rgba(29,91,110,.25);}
-    .dform label{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--soft);margin:.9rem 0 .3rem;}
-    .dform select,.dform input[type=number]{width:100%;padding:.7rem .9rem;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff;color:var(--ink);}
-    .dform .honor{display:flex;align-items:center;gap:.55rem;margin-top:1rem;font-size:.92rem;color:var(--soft);}
-    .dform .honor input{width:1.05rem;height:1.05rem;}
-    .dform .proceed{width:100%;margin-top:1.3rem;background:#00b15c;color:#fff;border:none;}
+    .dform iframe{width:100%;border:none;border-radius:8px;}
+    .zeffy-placeholder{padding:2rem 1rem;text-align:center;border:1px dashed var(--line);border-radius:8px;color:var(--soft);}
+    .zeffy-placeholder p{margin:0 0 .4rem;}
     .dform .secure{margin:.8rem 0 0;text-align:center;font-size:.78rem;color:var(--soft);}
 
     /* ---------- events ---------- */
@@ -195,7 +185,6 @@
       .roles{grid-template-columns:1fr;}
       .vform .row{grid-template-columns:1fr;}
       .vform .checks{grid-template-columns:1fr;}
-      .tiers{grid-template-columns:repeat(2,1fr);}
       .roadmap{grid-template-columns:1fr;}
       .foot__grid{grid-template-columns:1fr;}
       .band{flex-direction:column;align-items:stretch;justify-content:flex-start;background:var(--tide-deep);min-height:0;}
@@ -335,41 +324,20 @@
           <li><b>$5,000+</b> qualifies for Foundation naming recognition and leadership circle membership</li>
         </ul>
       </div>
-      <form class="dform" id="donateForm">
-        <h3>Choose Your Gift</h3>
-        <div class="freq" role="group" aria-label="Gift frequency">
-          <button type="button" class="sel" data-freq="One-time">One-time</button>
-          <button type="button" data-freq="Monthly">Monthly</button>
-          <button type="button" data-freq="Annual">Annual Pledge</button>
+      <div class="dform" id="zeffyDonate">
+        <h3>Give Now</h3>
+        <div>
+          <div data-zeffy-embed data-form-url="/embed/donation-form/make-a-gift-to-the-estuary"></div>
+          <div data-zeffy-embed-fallback style="display:none;">
+            <div style="position:relative;overflow:hidden;height:450px;width:100%;"><iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' data-zeffy-embed-src='https://www.zeffy.com/embed/donation-form/make-a-gift-to-the-estuary' allowpaymentrequest allowTransparency="true"></iframe></div>
+          </div>
+          <script
+            src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
+            onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';el.querySelectorAll('iframe[data-zeffy-embed-src]').forEach(function(f){f.src=f.getAttribute('data-zeffy-embed-src');});});">
+          </script>
         </div>
-        <div class="tiers" role="group" aria-label="Gift amount">
-          <button type="button" data-amt="50"><b>$50</b><span>Marsh Plants</span></button>
-          <button type="button" data-amt="150"><b>$150</b><span>Water Monitoring</span></button>
-          <button type="button" data-amt="500"><b>$500</b><span>Volunteer Event</span></button>
-          <button type="button" class="sel" data-amt="1000"><b>$1,000</b><span>Dam Engineering</span></button>
-          <button type="button" data-amt="5000"><b>$5,000</b><span>Leadership Circle</span></button>
-          <button type="button" data-amt="custom"><b>Other</b><span>Custom Amount</span></button>
-        </div>
-        <div id="customAmtWrap" style="display:none;">
-          <label for="customAmt">Custom amount (USD)</label>
-          <input type="number" id="customAmt" min="1" placeholder="250">
-        </div>
-        <label for="designation">Designate your gift (optional)</label>
-        <select id="designation">
-          <option>Where it’s needed most</option>
-          <option>Tide Mill Dam Restoration</option>
-          <option>Aquatic Habitat &amp; Fish Passage</option>
-          <option>Native Bank Restoration</option>
-          <option>Education &amp; Public Programs</option>
-        </select>
-        <label class="honor" style="letter-spacing:0;text-transform:none;font-weight:400;font-size:.92rem;">
-          <input type="checkbox" id="honorChk"> Make this gift in honor or memory of someone
-        </label>
-        <!-- TODO: replace with the real GoFundMe campaign URL, or swap this flow to a payment
-             processor (Stripe / Donorbox / Givebutter) for true on-site payments -->
-        <button type="submit" class="btn proceed">Proceed to GoFundMe &rarr;</button>
         <p class="secure">&#128274; 501(c)(3) tax-deductible &middot; Mill River Estuary Foundation &middot; Southport, CT</p>
-      </form>
+      </div>
     </div>
   </section>
 
@@ -535,33 +503,5 @@
     </div>
   </footer>
 
-  <script>
-    (function(){
-      var form = document.getElementById('donateForm');
-      if(!form) return;
-      var freq = 'One-time', amt = '1000';
-      form.querySelectorAll('.freq button').forEach(function(b){
-        b.addEventListener('click', function(){
-          form.querySelectorAll('.freq button').forEach(function(x){ x.classList.remove('sel'); });
-          b.classList.add('sel'); freq = b.dataset.freq;
-        });
-      });
-      var customWrap = document.getElementById('customAmtWrap');
-      form.querySelectorAll('.tiers button').forEach(function(b){
-        b.addEventListener('click', function(){
-          form.querySelectorAll('.tiers button').forEach(function(x){ x.classList.remove('sel'); });
-          b.classList.add('sel'); amt = b.dataset.amt;
-          customWrap.style.display = (amt === 'custom') ? 'block' : 'none';
-        });
-      });
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        /* TODO: replace with the real GoFundMe campaign URL (or a payment processor checkout).
-           Frequency/designation selections are shown here for the donor's reference; GoFundMe
-           collects the actual amount at checkout. */
-        window.open('https://www.gofundme.com/REPLACE-WITH-CAMPAIGN', '_blank', 'noopener');
-      });
-    })();
-  </script>
 </body>
 </html>
