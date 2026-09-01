@@ -153,8 +153,9 @@
     /* ---------- footer ---------- */
     footer{background:var(--tide-deep);color:#bcd0d6;padding:3.4rem 1.5rem 2rem;font-size:.9rem;}
     .foot__grid{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.2rem;}
-    .foot__logo{width:72px;height:72px;display:block;margin-bottom:.9rem;}
-    .foot__brand h3{color:#fff;font-size:1.35rem;margin-bottom:.5rem;}
+    .foot__brandmark{display:flex;align-items:flex-start;gap:.8rem;margin-bottom:.9rem;}
+    .foot__logo{width:45px;height:45px;flex:0 0 auto;display:block;}
+    .foot__brand h3{color:#fff;font-size:2.5rem;margin:0;}
     .foot__brand p{margin:0 0 1rem;color:#9fb4bc;font-size:.88rem;}
     .foot__social{display:flex;gap:.6rem;}
     .foot__social a{display:grid;place-items:center;width:2.1rem;height:2.1rem;border:1px solid rgba(255,255,255,.25);border-radius:50%;color:#dce8ec;text-decoration:none;font-size:.8rem;font-weight:600;}
@@ -185,6 +186,8 @@
       .vform .checks{grid-template-columns:1fr;}
       .roadmap{grid-template-columns:1fr;}
       .foot__grid{grid-template-columns:1fr;}
+      .foot__logo{width:32px;height:32px;}
+      .foot__brand h3{font-size:1.8rem;}
       .band{flex-direction:column;align-items:stretch;justify-content:flex-start;background:var(--tide-deep);min-height:0;}
       .band::before{content:"";display:block;width:100%;aspect-ratio:1.05/1;background:linear-gradient(rgba(14,47,58,.1),rgba(14,47,58,.2)),url('img/band-eagles-mobile.jpg') center/cover no-repeat;}
       .band blockquote{padding:2.2rem 1.25rem;}
@@ -454,8 +457,10 @@
   <footer>
     <div class="foot__grid">
       <div class="foot__brand">
-        <img class="foot__logo" src="img/logo.png" alt="Mill River Estuary Foundation logo" width="72" height="72">
-        <h3>Mill River Estuary Foundation</h3>
+        <div class="foot__brandmark">
+          <img class="foot__logo" src="img/logo.png" alt="Mill River Estuary Foundation logo" width="45" height="45">
+          <h3>Mill River Estuary Foundation</h3>
+        </div>
         <p>Preserving and restoring the Mill River estuary and upper Southport Harbor for the estuary
           inhabitants, the public, and future generations.</p>
         <!-- TODO: set real social profile URLs -->
