@@ -152,14 +152,14 @@
 
     /* ---------- footer ---------- */
     footer{background:var(--tide-deep);color:#bcd0d6;padding:3.4rem 1.5rem 2rem;font-size:.9rem;}
-    .foot__grid{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.2rem;}
-    .foot__brandmark{display:flex;align-items:flex-start;gap:.8rem;margin-bottom:.9rem;}
-    .foot__logo{width:45px;height:45px;flex:0 0 auto;display:block;}
-    .foot__brand h3{color:#fff;font-size:2.5rem;margin:0;}
+    .foot__grid{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:auto minmax(220px,1.1fr) 2fr;gap:1.8rem;align-items:start;}
+    .foot__logo{width:187px;height:187px;display:block;}
+    .foot__brand h3{color:#fff;font-size:1.6rem;margin:0 0 .5rem;}
     .foot__brand p{margin:0 0 1rem;color:#9fb4bc;font-size:.88rem;}
     .foot__social{display:flex;gap:.6rem;}
     .foot__social a{display:grid;place-items:center;width:2.1rem;height:2.1rem;border:1px solid rgba(255,255,255,.25);border-radius:50%;color:#dce8ec;text-decoration:none;font-size:.8rem;font-weight:600;}
     .foot__social a:hover{border-color:var(--sand);color:var(--sand);}
+    .foot__links{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
     footer h4{margin:0 0 .8rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);}
     footer ul{list-style:none;margin:0;padding:0;}
     footer li{margin-bottom:.45rem;}
@@ -171,7 +171,7 @@
     @media(max-width:900px){
       .roadmap{grid-template-columns:repeat(2,1fr);}
       .donate__grid{grid-template-columns:1fr;}
-      .foot__grid{grid-template-columns:1fr 1fr;}
+      .foot__grid{grid-template-columns:1fr;}
     }
     @media(max-width:720px){
       .nav{padding:.6rem 1rem;}
@@ -186,8 +186,9 @@
       .vform .checks{grid-template-columns:1fr;}
       .roadmap{grid-template-columns:1fr;}
       .foot__grid{grid-template-columns:1fr;}
-      .foot__logo{width:32px;height:32px;}
-      .foot__brand h3{font-size:1.8rem;}
+      .foot__logo{width:64px;height:64px;}
+      .foot__brand h3{font-size:1.4rem;}
+      .foot__links{grid-template-columns:1fr 1fr;}
       .band{flex-direction:column;align-items:stretch;justify-content:flex-start;background:var(--tide-deep);min-height:0;}
       .band::before{content:"";display:block;width:100%;aspect-ratio:1.05/1;background:linear-gradient(rgba(14,47,58,.1),rgba(14,47,58,.2)),url('img/band-eagles-mobile.jpg') center/cover no-repeat;}
       .band blockquote{padding:2.2rem 1.25rem;}
@@ -441,7 +442,7 @@
       <div class="btns">
         <a class="btn btn--donate" href="#donate">&#9829;&nbsp; Make a Donation</a>
         <!-- TODO: replace with the real contact phone number -->
-        <a class="btn btn--ghost" href="tel:+12030000000">&#9742;&nbsp; (203) 000-0000</a>
+        <a class="btn btn--ghost" href="tel:+12035542435">&#9742;&nbsp; (203) 554-2435</a>
       </div>
       <form class="signup" action="https://formspree.io/f/xlgkqaew" method="POST">
         <label for="signup-email">Stay connected to the harbor — seasonal updates, volunteer opportunities, and news from the estuary.</label>
@@ -456,11 +457,9 @@
 
   <footer>
     <div class="foot__grid">
+      <img class="foot__logo" src="img/logo.png" alt="Mill River Estuary Foundation logo" width="56" height="56">
       <div class="foot__brand">
-        <div class="foot__brandmark">
-          <img class="foot__logo" src="img/logo.png" alt="Mill River Estuary Foundation logo" width="45" height="45">
-          <h3>Mill River Estuary Foundation</h3>
-        </div>
+        <h3>Mill River Estuary Foundation</h3>
         <p>Preserving and restoring the Mill River estuary and upper Southport Harbor for the estuary
           inhabitants, the public, and future generations.</p>
         <!-- TODO: set real social profile URLs -->
@@ -471,37 +470,39 @@
           <a href="#" aria-label="LinkedIn">in</a>
         </div>
       </div>
-      <div>
-        <h4>Organization</h4>
-        <ul>
-          <li><a href="#mission">Our Mission</a></li>
-          <li><a href="#estuary">The Estuary</a></li>
-          <li><a href="#priority">Priority Project</a></li>
-          <li><a href="#events">Events Calendar</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get Involved</h4>
-        <ul>
-          <li><a href="#donate">Make a Donation</a></li>
-          <li><a href="#volunteer">Volunteer</a></li>
-          <li><a href="#cta">Newsletter</a></li>
-          <li><a aria-disabled="true" style="cursor:default;pointer-events:none;">Corporate Partners</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <!-- TODO: confirm contact email, phone, and mailing address -->
-          <li><a href="mailto:info@millriverct.com">info@millriverct.com</a></li>
-          <li><a href="tel:+12030000000">(203) 000-0000</a></li>
-          <li>Southport, CT 06890</li>
-        </ul>
+      <div class="foot__links">
+        <div>
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="#mission">Our Mission</a></li>
+            <li><a href="#estuary">The Estuary</a></li>
+            <li><a href="#priority">Priority Project</a></li>
+            <li><a href="#events">Events Calendar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="#donate">Make a Donation</a></li>
+            <li><a href="#volunteer">Volunteer</a></li>
+            <li><a href="#cta">Newsletter</a></li>
+            <li><a aria-disabled="true" style="cursor:default;pointer-events:none;">Corporate Partners</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <!-- TODO: confirm contact email, phone, and mailing address -->
+            <li><a href="mailto:info@millriverct.com">info@millriverct.com</a></li>
+            <li><a href="tel:+12035542435">(203) 554-2435</a></li>
+            <li>Southport, CT 06890</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="foot__legal">
       <!-- TODO: add EIN once issued; link Privacy Policy and IRS Form 990 when available -->
-      <span>&copy; 2026 Mill River Estuary Foundation &middot; 501(c)(3) pending &middot; EIN: XX-XXXXXXX</span>
+      <span>&copy; 2026 Mill River Estuary Foundation &middot; 501(c)(3) pending &middot; EIN: 42-4529024</span>
       <span><a href="#">Privacy Policy</a> &middot; <a href="#">IRS Form 990</a></span>
     </div>
   </footer>
