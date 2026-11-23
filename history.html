@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>History of the Tide Mill Dam — Mill River Estuary Foundation</title>
+<meta name="description" content="Three centuries at the head of Southport Harbor: the story of the Tide Mill and Dam on the Mill River, from the 1697 town grant on Herdsman's Island to today's restoration." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#16222b; --soft:#41535f; --paper:#f7f4ed; --paper-2:#efe9dc;
+    --tide:#1d5b6e; --tide-deep:#0e2f3a; --sand:#c9a86a; --line:#d9d0bf;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;color:var(--ink);background:var(--paper);font-family:"Source Sans 3",system-ui,sans-serif;font-size:1.06rem;line-height:1.72;}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;color:var(--tide-deep);line-height:1.15;font-weight:600;margin:0;}
+  a{color:var(--tide);}
+  a:hover{color:var(--tide-deep);}
+  img{display:block;max-width:100%;height:auto;}
+  .kicker{text-transform:uppercase;letter-spacing:.22em;font-size:.74rem;font-weight:600;color:var(--sand);margin:0 0 .6rem;}
+
+  /* top bar */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(14,47,58,.96);padding:.8rem 1.5rem;}
+  .nav__in{max-width:1040px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+  .nav__brand{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-weight:700;color:#fff;text-decoration:none;line-height:1.1;}
+  .nav__brand small{display:block;font-family:"Source Sans 3",sans-serif;font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);font-weight:600;}
+  .nav__links{display:flex;gap:1.1rem;align-items:center;}
+  .nav__links a{color:#fff;text-decoration:none;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+  .nav__links a:hover{color:var(--sand);}
+  .nav__links .nav__donate{background:#00b15c;border-radius:6px;padding:.45rem .9rem;}
+  .nav__links .nav__donate:hover{color:#fff;background:#009b50;}
+  @media(max-width:640px){.nav__links a:not(.nav__donate){display:none;}}
+
+  /* hero */
+  .hero{position:relative;color:#fff;text-align:center;padding:6.5rem 1.5rem 5rem;
+    background:linear-gradient(rgba(14,47,58,.62),rgba(14,47,58,.82)),url("img/hero-dam.jpg") center 60%/cover no-repeat;}
+  .hero__in{max-width:820px;margin:0 auto;}
+  .hero .kicker{font-size:.8rem;}
+  .hero h1{color:#fff;font-size:clamp(2.4rem,7vw,4.4rem);font-weight:700;}
+  .hero p.sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.15rem,3vw,1.65rem);color:#eadfca;margin:1.1rem auto 0;max-width:640px;line-height:1.35;}
+
+  main{max-width:1040px;margin:0 auto;padding:0 1.5rem;}
+  .intro{max-width:760px;margin:3.2rem auto 0;font-size:1.16rem;}
+  .intro p{margin:0 0 1rem;}
+
+  /* jump chips */
+  .jump{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin:2rem auto 0;max-width:820px;}
+  .jump a{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.4rem 1rem;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--soft);text-decoration:none;}
+  .jump a:hover{border-color:var(--sand);color:var(--tide-deep);}
+
+  /* how it works */
+  .how{margin:3.6rem 0 0;}
+  .how h2{font-size:clamp(1.8rem,4.5vw,2.4rem);text-align:center;margin-bottom:.4rem;}
+  .how .lead{text-align:center;max-width:680px;margin:0 auto 1.8rem;color:var(--soft);}
+  .how__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;counter-reset:s;}
+  .how__card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.3rem 1.3rem 1.4rem;position:relative;}
+  .how__card::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--tide);color:#fff;font-weight:600;margin-bottom:.7rem;}
+  .how__card h3{font-size:1.25rem;margin-bottom:.4rem;}
+  .how__card p{margin:0;font-size:.95rem;color:var(--soft);}
+  blockquote{margin:0;}
+  .how__quote{max-width:760px;margin:1.8rem auto 0;text-align:center;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.35rem;line-height:1.4;color:var(--tide-deep);}
+  .how__quote cite{display:block;font-family:"Source Sans 3",sans-serif;font-style:normal;font-size:.8rem;letter-spacing:.06em;color:var(--soft);margin-top:.5rem;}
+
+  /* timeline */
+  .era{margin:4.2rem 0 0;}
+  .era__head{text-align:center;margin-bottom:2rem;}
+  .era__head h2{font-size:clamp(1.9rem,5vw,2.7rem);}
+  .era__head h2::after{content:"";display:block;width:48px;height:3px;background:var(--sand);border-radius:2px;margin:.8rem auto 0;}
+  .era__head p{margin:.8rem auto 0;max-width:620px;color:var(--soft);}
+  .timeline{position:relative;max-width:900px;margin:0 auto;}
+  .timeline::before{content:"";position:absolute;left:7.4rem;top:.4rem;bottom:.4rem;width:2px;background:var(--line);}
+  .entry{display:grid;grid-template-columns:6.4rem 1fr;gap:2.2rem;margin:0 0 2.2rem;position:relative;}
+  .entry::before{content:"";position:absolute;left:calc(7.4rem - 6px);top:.65rem;width:14px;height:14px;border-radius:50%;background:var(--paper);border:3px solid var(--sand);}
+  .entry__when{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.55rem;line-height:1.1;color:var(--tide);text-align:right;padding-top:.15rem;}
+  .entry__when small{display:block;font-family:"Source Sans 3",sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-top:.25rem;}
+  .entry__body h3{font-size:1.45rem;margin-bottom:.45rem;}
+  .entry__body p{margin:0 0 .8rem;}
+  .entry__body p:last-child{margin-bottom:0;}
+  .quote{margin:1rem 0 !important;padding:.9rem 1.2rem;background:var(--paper-2);border-left:4px solid var(--sand);border-radius:4px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.2rem;line-height:1.4;color:var(--tide-deep);}
+  .quote cite{display:block;font-family:"Source Sans 3",sans-serif;font-style:normal;font-size:.78rem;letter-spacing:.05em;color:var(--soft);margin-top:.4rem;}
+  .note{margin:1rem 0 !important;font-size:.9rem;color:var(--soft);background:#fff;border:1px dashed var(--line);border-radius:8px;padding:.7rem .95rem;}
+
+  figure{margin:1.1rem 0 0;}
+  figure img{width:100%;border-radius:10px;border:1px solid var(--line);background:#1c1c1c;}
+  figcaption{font-size:.84rem;color:var(--soft);margin-top:.5rem;line-height:1.5;}
+  figure + p{margin-top:1.1rem;}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.1rem;}
+  .pair figure{margin:0;}
+
+  /* today */
+  .today{margin:4.5rem 0 0;background:var(--tide-deep);color:#fff;border-radius:16px;padding:3rem 2rem;text-align:center;}
+  .today h2{color:#fff;font-size:clamp(1.9rem,5vw,2.7rem);}
+  .today .kicker{color:var(--sand);}
+  .today p{max-width:700px;margin:1rem auto 0;color:#dce8ec;}
+  .today .pair{max-width:860px;margin:1.8rem auto 0;}
+  .today figcaption{color:#bcd0d6;text-align:left;}
+  .today figure img{border-color:rgba(255,255,255,.2);}
+  .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem;}
+  .btn{display:inline-flex;align-items:center;padding:.85rem 1.7rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid transparent;}
+  .btn--donate{background:#00b15c;color:#fff;}
+  .btn--donate:hover{background:#009b50;color:#fff;}
+  .btn--ghost{border-color:#fff;color:#fff;}
+  .btn--ghost:hover{background:rgba(255,255,255,.12);color:#fff;}
+
+  /* sources */
+  .sources{margin:4rem auto 0;max-width:820px;}
+  .sources h2{font-size:1.9rem;margin-bottom:.4rem;}
+  .sources p.lead{color:var(--soft);margin:0 0 1rem;}
+  .sources ul{padding-left:1.2rem;margin:0;}
+  .sources li{margin:.5rem 0;font-size:.95rem;color:var(--ink);}
+  .sources .caveat{margin-top:1.2rem;font-size:.92rem;color:var(--soft);}
+
+  footer{margin-top:4rem;background:var(--tide-deep);color:#9fb4bc;text-align:center;padding:2rem 1.5rem;font-size:.85rem;}
+  footer a{color:var(--sand);}
+
+  @media(max-width:860px){
+    .how__grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:720px){
+    .timeline::before{left:7px;}
+    .entry{grid-template-columns:1fr;gap:.2rem;padding-left:2rem;margin-bottom:2rem;}
+    .entry::before{left:0;top:.5rem;}
+    .entry__when{text-align:left;font-size:1.4rem;}
+    .entry__when small{display:inline;margin-left:.6rem;}
+    .pair{grid-template-columns:1fr;}
+    .today{padding:2.4rem 1.2rem;border-radius:12px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/">Mill River Estuary Foundation<small>Southport · Connecticut</small></a>
+    <div class="nav__links">
+      <a href="/">&larr; Home</a>
+      <a href="/#priority">Priority Project</a>
+      <a class="nav__donate" href="/#donate">Donate</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero__in">
+    <p class="kicker">Our Heritage</p>
+    <h1>History of the Tide Mill Dam</h1>
+    <p class="sub">Three centuries of tides, millstones, fire, and rebuilding at the head of Southport Harbor</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro">
+    <p>Where the Mill River meets Southport Harbor, a small rocky island has been put to work by the
+      tide for more than three hundred years. Early settlers called it Herdsman&rsquo;s Island, because the
+      town&rsquo;s sheep were gathered there each night, safe from wolves. In 1697 the town of Fairfield gave
+      permission to build a grist mill on it &mdash; and the mill, its dam, and the tidal pond behind it have
+      shaped this corner of Southport ever since.</p>
+    <p>This is their story, told from town records, newspaper accounts, a curator&rsquo;s research,
+      and the photographs that survive &mdash; in the order it happened.</p>
+  </section>
+
+  <nav class="jump" aria-label="Jump to a section">
+    <a href="#how">How a tide mill works</a>
+    <a href="#early">1639&ndash;1697</a>
+    <a href="#fire">1702&ndash;1830s</a>
+    <a href="#working">1850s&ndash;1918</a>
+    <a href="#tavern">1924&ndash;1960</a>
+    <a href="#landmark">1958&ndash;today</a>
+    <a href="#sources">Sources</a>
+  </nav>
+
+  <!-- HOW IT WORKED -->
+  <section class="how" id="how">
+    <h2>How a Tide Mill Works</h2>
+    <p class="lead">A tide mill needs no waterfall. It borrows the power of the sea, twice a day.</p>
+    <div class="how__grid">
+      <div class="how__card">
+        <h3>The flood tide fills the pond</h3>
+        <p>As the tide rises in the harbor, gates in the dam let salt water flow in and fill the mill pond.
+          At flood stage the tide can reach more than a mile up the Mill River.</p>
+      </div>
+      <div class="how__card">
+        <h3>The gates close at high water</h3>
+        <p>At high tide the gates are shut, trapping the water in the pond &mdash; a tidal basin held higher
+          than the harbor outside once the tide begins to fall.</p>
+      </div>
+      <div class="how__card">
+        <h3>The ebb turns the mill</h3>
+        <p>When the tide has fallen about halfway, the gates open and the trapped water rushes out, turning
+          the machinery that drives the millstones until low tide or shortly after.</p>
+      </div>
+    </div>
+    <blockquote class="how__quote">
+      &ldquo;It was a tide mill and could only operate on the falling tide. When there was a lot of grain to
+      be ground, Mr. Kelsey would get up in the night, light his old oil lantern, and start the mill a-going
+      to catch the falling tide.&rdquo;
+      <cite>&mdash; William O. Burr, remembering miller Alva Kelsey in 1951</cite>
+    </blockquote>
+  </section>
+
+  <!-- ERA 1 -->
+  <section class="era" id="early">
+    <div class="era__head">
+      <p class="kicker">Part One</p>
+      <h2>A River of Mills</h2>
+      <p>Fairfield began as a farming community &mdash; and farmers needed millers.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="entry">
+        <div class="entry__when">1639</div>
+        <div class="entry__body">
+          <h3>A farming town needs a miller</h3>
+          <p>Fairfield is founded in 1639. Farmers depend on millers to grind their wheat, and land is even
+            granted to millers to encourage them to settle. Soon the shores of the river are dotted with
+            grist, fulling, and sawmills &mdash; which is how the Mill River gets its name.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1656</div>
+        <div class="entry__body">
+          <h3>&ldquo;Ye Tide Mill of Fairfield&rdquo;</h3>
+          <p>A deed between five Pequonnock people and five town officials refers to &ldquo;ye Tide Mill of
+            Fairfield&rdquo; &mdash; proof that a mill powered by the tides was already working only seventeen
+            years after the town was founded. Exactly where it stood is not known; one suggestion is Ash
+            Creek, near today&rsquo;s marina.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1662</div>
+        <div class="entry__body">
+          <h3>Mills multiply on the Mill River</h3>
+          <p>By 1662 there is a grist mill on the Mill River. For the next fifty years, the town&rsquo;s records
+            are full of grants of privileges to build more grist mills and fulling mills along the river.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1697<small>September 27</small></div>
+        <div class="entry__body">
+          <h3>A mill on Herdsman&rsquo;s Island</h3>
+          <p>At a town meeting in Fairfield, Thomas Bedient asks for liberty to build a grist mill on the
+            Mill River &ldquo;at ye place called Herdsmans Island.&rdquo; The little island at the head of
+            Southport Harbor had been named by the early settlers because the town&rsquo;s sheep flock was
+            herded there each night, to keep them safe from wolves and other predators.</p>
+          <p>It is the earliest documented grant for a mill on the island &mdash; the start of more than
+            three centuries of the tide at work on this spot.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ERA 2 -->
+  <section class="era" id="fire">
+    <div class="era__head">
+      <p class="kicker">Part Two</p>
+      <h2>Fire, War, and Rebuilding</h2>
+      <p>Wooden mills burn. This one was rebuilt every time.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="entry">
+        <div class="entry__when">1702<small>August 6</small></div>
+        <div class="entry__body">
+          <h3>Consumed by fire</h3>
+          <p>Town records of August 6, 1702, report that the mill on the Mill River had been &ldquo;consumed
+            by fire&rdquo; and that there was a &ldquo;necessity of a mill being erected again for ye
+            comfort&rdquo; of the town. Permission to rebuild on Herdsman&rsquo;s Island is given to Moses Dimon
+            and Joseph Perry &mdash; Perry then a young man of about twenty-five. Some records suggest the mill
+            burned again in 1705 and was rebuilt by Perry and Richard Ogden.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1720s</div>
+        <div class="entry__body">
+          <h3>The town authorizes a dam</h3>
+          <p>In town minutes of December 1720, the town grants Joseph Perry the old mill pond and gives him
+            liberty to erect a grist mill at Herdsman&rsquo;s Island, &ldquo;where it may be most convenient
+            for making a damm over the river near that place.&rdquo; The curator of the Fairfield Historical
+            Society dates Perry&rsquo;s permission to build on the island to 1722, and the National Register
+            of Historic Places records a grist mill on this site from around 1722 onward.</p>
+          <p class="note">Sources differ by a year or two on the exact date. They agree on the essentials:
+            by the early 1720s the town had authorized a mill and a dam on this spot, and milling continued
+            here for roughly two centuries.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1770</div>
+        <div class="entry__body">
+          <h3>&ldquo;It grinds well&rdquo;</h3>
+          <p>Peter Perry, who runs a mill a mile upstream, writes in his account book that Jabez Perry&rsquo;s
+            new mill on Herdsman&rsquo;s Island threatens to take away a good deal of his business.</p>
+          <p class="quote">&ldquo;&hellip;for it is the talk that it grinds well.&rdquo;
+            <cite>Peter Perry&rsquo;s account book, 1770</cite></p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1779<small>&amp; 1781</small></div>
+        <div class="entry__body">
+          <h3>The Revolution reaches the Mill River</h3>
+          <p>In July 1779 British troops burn Fairfield, and the next day land at Mill River and burn the
+            houses and outbuildings there. Local accounts say the tide mill and several other mills owned by
+            the Perry family burned as well.</p>
+          <p>The danger does not end. On March 4, 1781, William Wheeler of Black Rock notes in his diary that
+            Loyalists from Long Island, about thirty men in four boats, &ldquo;burnt 2 tide mills on Mill
+            River belonging to the Perrys.&rdquo; After the war, Jabez Perry rebuilds again.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1800s<small>Early</small></div>
+        <div class="entry__body">
+          <h3>New owners, a famous view</h3>
+          <p>The mill leaves the Perry family in the early 1800s and is owned by Enoch and Charles Foot, and
+            later by John Moody, who also runs a mill on the Rooster River near Bridgeport. It is a simple
+            two-story rectangular building, set across the island at a right angle to the water&rsquo;s flow.
+            You can glimpse it in the right background of John Warner Barber&rsquo;s famous 1836 view of
+            Southport Harbor.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1831</div>
+        <div class="entry__body">
+          <h3>Southport grows up around the harbor</h3>
+          <p>As shipping and trade boom, the area between the harbor, the Mill River, and Sasco Creek is
+            made a separate borough and named Southport. According to the National Register nomination,
+            more shipping was owned in Southport, in proportion to its size, than in any other port between
+            Boston and New York. Farmers here turn to onions &mdash; the &ldquo;Southport onion&rdquo; &mdash;
+            and sailing vessels carry the harvest to New York. When the railroad arrives in 1848&ndash;49,
+            reliance on shipping by water drops sharply, and the borough is dissolved in 1854 &mdash; though
+            the name has stayed.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ERA 3 -->
+  <section class="era" id="working">
+    <div class="era__head">
+      <p class="kicker">Part Three</p>
+      <h2>The Working Mill</h2>
+      <p>The building that stands today, and the last miller to run it.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="entry">
+        <div class="entry__when">1854<small>&ndash; 1855</small></div>
+        <div class="entry__body">
+          <h3>Another fire, and a missing mill</h3>
+          <p>In 1854 Aaron B. Gould sells a &ldquo;tract of land or mill site and mill dam and pond, with
+            liberty to build and repair said mill dam&rdquo; &mdash; with no mention of any mill standing on
+            it. Tradition says the old mill burned around 1855. A map of Southport made in 1858 shows no
+            mill building on the island at all.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1860s</div>
+        <div class="entry__body">
+          <h3>Alva Hough builds the mill that still stands</h3>
+          <p>Sometime between 1854 and 1866, during the Civil War years, Alva Hough builds a new mill on the
+            island. It is a large two-and-a-half-story building in two wings &mdash; one set perpendicular to the
+            river, one parallel to it &mdash; sheathed in plain vertical boards. A big barn door opens onto
+            Harbor Road so wagons can be loaded and unloaded; three doors, one above another, on the south side
+            let grain and flour be loaded and unloaded from boats. Two chimney stacks rise from the roof, probably
+            outlets for drying kilns.</p>
+          <p>Instead of a classic waterwheel, Hough&rsquo;s mill is driven by a turbine under the west wing.
+            Water flows in through gates in the east dam on the rising tide, is held in the mill pond, then
+            released through a sluiceway on the west side once the tide has dropped far enough to turn the
+            turbine. The turbine spins a shaft that rotates the millstones.</p>
+          <figure>
+            <img src="img/history-c1900.jpg" width="1142" height="836" loading="lazy"
+              alt="Black-and-white photograph of the wooden Tide Mill from the southeast, beside a truss bridge, with a rowboat in the foreground" />
+            <figcaption>The mill from the southeast, around 1900: two wings of weathered vertical boards on a
+              stone-lined foundation at the water&rsquo;s edge, beside the truss bridge.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1870<small>August 31</small></div>
+        <div class="entry__body">
+          <h3>&ldquo;Try to Please&rdquo;</h3>
+          <p>Francis Jelliff buys the mill property from Eli B. Nichols and advertises his new business in the
+            <em>Southport Chronicle</em> as &ldquo;Southport Mills&rdquo; &mdash; flour, feed, and grain, with
+            free delivery.</p>
+          <p class="quote">&ldquo;Every article sold warranted to be the best of its kind, and all at the lowest
+            cash prices&hellip; Our motto is &mdash; Try to Please.&rdquo;
+            <cite>Francis Jelliff, No. 10 Water Street, Southport</cite></p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1880s</div>
+        <div class="entry__body">
+          <h3>Sturges and Kelsey</h3>
+          <p>In the early 1880s the mill is bought by Frederick Sturges, a wealthy New York merchant and
+            financier whose summer home is on Mill Plain in Fairfield. Alva R. Kelsey, a miller who came here
+            from Clinton around 1879, is already at work, and he will run the mill for nearly forty years.
+            (Accounts differ on whether Sturges bought it in 1881 or 1888.)</p>
+          <p>Local farmers, working small plots of tired soil, can no longer compete with flour from the
+            Western grain fields. The mill&rsquo;s days as a business are numbered &mdash; but Sturges keeps
+            it grinding anyway, as a public service to the few Fairfield farmers still hanging on.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1906</div>
+        <div class="entry__body">
+          <h3>A postcard of the mill</h3>
+          <figure>
+            <img src="img/history-1906.jpg" width="1280" height="795" loading="lazy"
+              alt="Photographic postcard captioned Southport Tide Mill 1906, showing the mill buildings and a truss bridge over the river" />
+            <figcaption>&ldquo;Southport Tide Mill, 1906&rdquo; &mdash; the handwritten caption on a photographic
+              postcard. The truss bridge crosses the river beside the mill.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1916<small>October 15</small></div>
+        <div class="entry__body">
+          <h3>&ldquo;Old Tide Mill Still Grinds Its Daily Grist&rdquo;</h3>
+          <p>The <em>Hartford Daily Courant</em> devotes a full feature to the Fairfield tide mill, calling it
+            &ldquo;probably the only mill of its kind still in operation in this part of the country,&rdquo;
+            working steadily for two hundred years. Once, the writer notes, many tide mills dotted the
+            Sound shore; now most had been dismantled or stood silent.</p>
+          <p>Alva Kelsey, the 75-year-old miller, had spent half his life at the mill. The paper describes
+            the old wheat mill, its massive stones silent as the new-process flour of the Northwest took
+            over, and how the mill still ground feed for the few local farmers who raised it. William O. Burr
+            later remembered Kelsey as &ldquo;a great miller&rdquo; whose rye flour was the finest and whose
+            bolted cornmeal was the best &mdash; a man who could take out the great millstones and sharpen
+            them himself when they stopped grinding fast enough.</p>
+          <p class="quote">&ldquo;Were the Fairfield mill dependent upon its earnings to keep it in operation,
+            it, too, would long since have ceased its whirring.&rdquo;
+            <cite>Hartford Daily Courant, October 15, 1916 &mdash; on Frederick Sturges&rsquo;s support of the mill</cite></p>
+          <p>Local children came to the mill to fish and crab. Miss Regina Kiley of Bridgeport, one of the last
+            to remember it in operation, recalled being taught to bait a hook and crab by Kelsey &mdash; and
+            the shock of first seeing him emerge from the mill covered from head to toe in white flour dust,
+            &ldquo;looking exactly as she thought a ghost should look.&rdquo;</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1918</div>
+        <div class="entry__body">
+          <h3>The wheels stop</h3>
+          <p>Frederick Sturges dies in 1918, and the mill stops grinding. Alva Kelsey moves away to Guilford.
+            After more than two centuries, the tide no longer turns the millstones on Herdsman&rsquo;s Island.</p>
+          <figure>
+            <img src="img/history-c1918.jpg" width="1206" height="836" loading="lazy"
+              alt="Black-and-white photograph of the Tide Mill and its truss bridge over the river, seen through bare trees" />
+            <figcaption>The mill and its truss bridge around 1918, in the last years of grinding.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ERA 4 -->
+  <section class="era" id="tavern">
+    <div class="era__head">
+      <p class="kicker">Part Four</p>
+      <h2>Tavern and Inn</h2>
+      <p>The mill finds a second life &mdash; as a place to eat, with a view.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="entry">
+        <div class="entry__when">1924</div>
+        <div class="entry__body">
+          <h3>The Tide Mill Tavern</h3>
+          <p>Clarence B. Sturges, a developer of the estate district on Sasco Hill and a founder of the
+            Country Club of Fairfield, buys the mill from Frederick Sturges&rsquo;s estate, intending to
+            preserve it as a reminder of Fairfield&rsquo;s earlier days. He gives the exterior a half-timbered
+            Tudor look, with bay windows and peaked dormers, adds a two-story open porch overlooking the
+            harbor, and installs a stage-set waterwheel on the west side. Inside, the rustic mill interior is
+            decorated with nautical antiques and paintings.</p>
+          <p>The Tide Mill Tavern opens in 1924 under the management of Margaret S. Taylor &mdash; a pleasant
+            place for the growing suburban population to stop on a drive along the shore. There is a dock
+            for passing pleasure craft, and overnight guests can be put up in the upstairs rooms.</p>
+          <figure>
+            <img src="img/history-1920s-tavern.jpg" width="1233" height="890" loading="lazy"
+              alt="Holiday greeting card from the Tide Mill Tavern, Southport, showing the half-timbered building and its porch over the water" />
+            <figcaption>&ldquo;A Holiday Greeting from The Tide Mill Tavern,&rdquo; 1920s. The waterwheel at left
+              was added for atmosphere; the old mill now wears a Tudor coat.</figcaption>
+          </figure>
+          <p>For years, the tavern&rsquo;s owners tried and failed to win a liquor license. It didn&rsquo;t stop
+            the yachting crowd: they would anchor alongside, drink their martinis aboard while waving at the
+            diners, and then come ashore for dinner.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1942</div>
+        <div class="entry__body">
+          <h3>The Spinning Wheel</h3>
+          <p>Mrs. Elaine D. Tottle and her son William, proprietors of the Spinning Wheel Inn at Redding
+            Ridge, buy the building and rename it the Spinning Wheel Mill. The restaurant runs until 1955.</p>
+          <figure>
+            <img src="img/history-spinning-wheel.jpg" width="1280" height="803" loading="lazy"
+              alt="Aerial postcard of the Spinning Wheel restaurant at Southport, with cars parked beside the half-timbered building" />
+            <figcaption>The Spinning Wheel, Southport, in a mid-twentieth-century aerial postcard.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1957<small>&ndash; 1960</small></div>
+        <div class="entry__body">
+          <h3>A gift to the Boys&rsquo; Club</h3>
+          <p>In 1957, John H. Ballantine of Greens Farms buys the building and, the same year, donates it to the
+            Wakeman Memorial Association (the Wakeman Boys&rsquo; Club) to provide funds for its operations.
+            The Galaske family runs the Tide Mill Inn Restaurant here until 1960, when the building is
+            converted to offices &mdash; the use it has largely had ever since.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ERA 5 -->
+  <section class="era" id="landmark">
+    <div class="era__head">
+      <p class="kicker">Part Five</p>
+      <h2>A Southport Landmark</h2>
+      <p>From historic district to the front line of a changing climate.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="entry">
+        <div class="entry__when">1958<small>&amp; after</small></div>
+        <div class="entry__body">
+          <h3>Offices, and a home above the water</h3>
+          <p>Dr. William Kueffner moves his pediatric practice to the Tide Mill Building in 1958. He later
+            makes his home in the building&rsquo;s top-floor &ldquo;penthouse,&rdquo; where he has lived since
+            1986. As the building changes hands, its Tudor half-timbering is covered with vertical siding
+            again, returning the old mill to something like its original appearance.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1971</div>
+        <div class="entry__body">
+          <h3>On the National Register</h3>
+          <p>The Southport Historic District is entered in the National Register of Historic Places in 1971.
+            Its nomination lists the Tide Mill Building at 95 Harbor Road as the site of a grist mill from
+            around 1722 until about fifty years earlier, and notes that its mill buildings had been
+            incorporated into the present structure.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1982<small>&amp; 1992</small></div>
+        <div class="entry__body">
+          <h3>Millstones underfoot, water at the door</h3>
+          <p>In 1982 the <em>Fairfield Citizen-News</em> reports that the building&rsquo;s entrance is still
+            paved with some of the original millstone. In December 1992 a serious flood sends water into the
+            building &mdash; knee-deep in the furnace room. Living on an island has its moments.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">1997<small>&ndash; 2005</small></div>
+        <div class="entry__body">
+          <h3>A new bridge over the mill</h3>
+          <p>In July 1997 the <em>Fairfield Citizen-News</em> revisits the Southport Tide Mill in a feature by
+            Marcia Miner, noting that several old millstones can still be seen behind the building. That
+            November, town boards begin discussing a replacement for the bridge connecting Harbor and Sasco
+            Hill roads across the Mill River &mdash; a bridge in two spans, on either side of the building.</p>
+          <p>Construction begins in the fall of 2003 on a project originally projected at $2.4 million and
+            later grown to about $3 million, reimbursable by state and federal grants. The work proves
+            challenging &mdash; unexpected rock excavation, a severe winter, a collapsed cofferdam &mdash; and
+            the bridge&rsquo;s appearance sparks a long, spirited debate before the town&rsquo;s Historic
+            District Commission. In June 2005 the tenants are still waiting for it to finish, expected that
+            November.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry__when">2009</div>
+        <div class="entry__body">
+          <h3>Old mill, new energy</h3>
+          <p>In October 2009 the town&rsquo;s Historic District Commission approves solar panels for the
+            Tide Mill roof, on a south-facing section not visible from the bridge or the harbor. Dr. Kueffner
+            had long been interested in alternative energy, and had also looked into generating power from
+            the tide itself with a turbine &mdash; the same idea the mill&rsquo;s builders put to work three
+            centuries earlier.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section class="today" id="today">
+    <p class="kicker">The Next Chapter</p>
+    <h2>The Dam Needs Us Now</h2>
+    <p>For more than three centuries the historic Tide Mill Dam has regulated the flow of water from the Mill
+      River into Southport Harbor. Years of disrepair &mdash; worsened by the ice floes of winter 2025/2026
+      &mdash; have dropped water levels and let sediment accumulate. Restoring this historic structure is the
+      Mill River Estuary Foundation&rsquo;s first and most urgent undertaking.</p>
+    <div class="pair">
+      <figure>
+        <img src="img/restoration-1.jpg" width="640" height="480" loading="lazy"
+          alt="An excavator and crane working beside the Tide Mill Dam, with steel sheet piling along the far bank" />
+        <figcaption>Restoration work at the dam.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/restoration-2.jpg" width="640" height="480" loading="lazy"
+          alt="Steel sheet piling in place at the Tide Mill Dam, with the bridge and Southport Harbor beyond" />
+        <figcaption>Steel sheet piling in place, with the bridge and harbor beyond.</figcaption>
+      </figure>
+    </div>
+    <div class="btns">
+      <a class="btn btn--donate" href="/#donate">&#9829;&nbsp; Support the Restoration</a>
+      <a class="btn btn--ghost" href="/#priority">About the Project</a>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="sources" id="sources">
+    <h2>Sources</h2>
+    <p class="lead">This history is drawn from the documents gathered by the Foundation:</p>
+    <ul>
+      <li>Christopher B. Nevins, Curator, Fairfield Historical Society, &ldquo;The Southport Tide Mill.&rdquo;</li>
+      <li>Fairfield town meeting records, including the minutes of September 27, 1697, and transcribed town
+        minutes and deeds of 1656, 1662, 1702, and 1720.</li>
+      <li>&ldquo;Old Tide Mill Still Grinds Its Daily Grist,&rdquo; <em>The Hartford Daily Courant</em>,
+        October 15, 1916.</li>
+      <li>National Register of Historic Places Inventory&ndash;Nomination Form, Southport Historic District,
+        Fairfield, Connecticut (nominated 1970; entered 1971).</li>
+      <li>Marcia Miner, &ldquo;Southport Tide Mill,&rdquo; <em>Fairfield Citizen-News</em>, July 1, 1997.</li>
+      <li>&ldquo;Then and Now: The Tide Mill Building,&rdquo; <em>Fairfield Citizen-News</em>, September 1, 1982.</li>
+      <li>Andrew Brophy, &ldquo;Tide Mill tenants want bridge done,&rdquo; <em>Connecticut Post</em>,
+        June 9, 2005.</li>
+      <li>&ldquo;Historic District Commission approves solar panels for Tide Mill,&rdquo;
+        <em>The Southport Globe</em>, October 14, 2009.</li>
+      <li>Photographs and postcards from the Foundation&rsquo;s collection.</li>
+    </ul>
+    <p class="caveat">Where sources disagree &mdash; on the exact year of a grant, or when the Sturges family
+      bought the mill &mdash; we say so rather than choose. Do you have a photograph, document, or family
+      memory of the Tide Mill? We would love to hear from you at
+      <a href="mailto:info@millriverestuary.com?subject=Tide%20Mill%20history">info@millriverestuary.com</a>.</p>
+  </section>
+
+</main>
+
+<footer>
+  <a href="/">Mill River Estuary Foundation</a> &middot; Southport, CT &middot;
+  <a href="privacy-policy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
