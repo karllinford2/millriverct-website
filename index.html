@@ -85,6 +85,12 @@
       background:var(--tide);color:#fff;font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.2rem;margin-bottom:.7rem;}
     .step h3{font-size:1.14rem;margin-bottom:.35rem;}
     .step p{margin:0;font-size:.9rem;color:var(--soft);}
+    .restoration{max-width:1040px;margin:2.6rem auto 0;text-align:center;}
+    .restoration .kicker{margin-bottom:1rem;}
+    .restoration__pair{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+    .restoration__pair img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid var(--line);display:block;transition:opacity .6s ease;}
+    .restoration__pair img.is-fading{opacity:0;}
+    @media(max-width:720px){.restoration__pair{gap:.6rem;}}
     .thermometer{max-width:640px;margin:1.8rem auto 0;}
 
     /* ---------- donate ---------- */
@@ -303,6 +309,13 @@
       <div class="step"><h3>Regulatory Coordination</h3><p>Working with CT DEEP Dam Safety &amp; Inland Water Resources, the US Army Corps of Engineers, and the Town of Fairfield to obtain required approvals.</p></div>
       <div class="step"><h3>Community Engagement</h3><p>Hosting public forums and informational sessions, and partnering with civic organizations that share our stewardship goals.</p></div>
       <div class="step"><h3>Restoration Construction</h3><p>Undertaking lawful, responsible restoration that protects the resource, the public, and the character of upper Southport Harbor.</p></div>
+    </div>
+    <div class="restoration">
+      <p class="kicker">Restoration Photos</p>
+      <div class="restoration__pair" id="restorationPair">
+        <img src="img/restoration-1.jpg" alt="Excavator and crane working beside the Tide Mill Dam during restoration, with steel sheet piling along the far bank" width="640" height="480" />
+        <img src="img/restoration-2.jpg" alt="Steel sheet piling in place at the Tide Mill Dam, with the bridge and Southport Harbor beyond" width="640" height="480" />
+      </div>
     </div>
   </section>
 
@@ -523,5 +536,39 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var pair = document.getElementById('restorationPair');
+      if (!pair) return;
+      var slots = pair.querySelectorAll('img');
+      var photos = [
+        { src: 'img/restoration-1.jpg', alt: slots[0].alt },
+        { src: 'img/restoration-2.jpg', alt: slots[1].alt },
+        { src: 'img/restoration-3.jpg', alt: 'A crane and construction equipment behind steel sheet piling at the Tide Mill Dam' }
+      ];
+      photos.forEach(function (p) { new Image().src = p.src; });
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      var INTERVAL_MS = 5000;
+      var start = 0;
+      var paused = false;
+      pair.addEventListener('mouseenter', function () { paused = true; });
+      pair.addEventListener('mouseleave', function () { paused = false; });
+
+      setInterval(function () {
+        if (paused || document.hidden) return;
+        start = (start + 1) % photos.length;
+        slots.forEach(function (img, i) {
+          var p = photos[(start + i) % photos.length];
+          img.classList.add('is-fading');
+          setTimeout(function () {
+            img.src = p.src;
+            img.alt = p.alt;
+            img.classList.remove('is-fading');
+          }, 600);
+        });
+      }, INTERVAL_MS);
+    })();
+  </script>
 </body>
 </html>
