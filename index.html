@@ -542,12 +542,13 @@
       var photos = [
         { src: 'img/restoration-1.jpg', alt: img.alt },
         { src: 'img/restoration-2.jpg', alt: 'Steel sheet piling in place at the Tide Mill Dam, with the bridge and Southport Harbor beyond' },
-        { src: 'img/restoration-3.jpg', alt: 'A crane and construction equipment behind steel sheet piling at the Tide Mill Dam' }
+        { src: 'img/restoration-3.jpg', alt: 'A crane and construction equipment behind steel sheet piling at the Tide Mill Dam' },
+        { src: 'img/restoration-4.jpg', alt: 'A crane towering over steel sheet piling at the Tide Mill Dam, seen from the water', pos: '50% 30%' }
       ];
       photos.forEach(function (p) { new Image().src = p.src; });
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      var INTERVAL_MS = 2000;
+      var INTERVAL_MS = 3000;
       var FADE_MS = 400;
       var current = 0;
       var paused = false;
@@ -562,6 +563,7 @@
         setTimeout(function () {
           img.src = p.src;
           img.alt = p.alt;
+          img.style.objectPosition = p.pos || '50% 50%';
           img.classList.remove('is-fading');
         }, FADE_MS);
       }, INTERVAL_MS);
