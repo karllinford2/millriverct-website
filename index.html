@@ -320,7 +320,7 @@
     <div class="restoration">
       <p class="kicker">Restoration Photos</p>
       <div class="restoration__frame" id="restorationFrame">
-        <img src="img/restoration-4.jpg" alt="A crane towering over steel sheet piling at the Tide Mill Dam, seen from the water" width="640" height="480" style="object-position:50% 30%" />
+        <img src="img/restoration-9.jpg" alt="The bridge, stone wall, and Tide Mill building seen across the calm mill pond on a summer evening" width="640" height="480" />
       </div>
     </div>
   </section>
@@ -543,8 +543,21 @@
       var img = frame.querySelector('img');
       // Shown in the order taken (dates from the original file names, mmddyy). Keep new photos in date order.
       var photos = [
+        // 07/10/26
+        { src: 'img/restoration-9.jpg', alt: img.alt },
+        // 10/03/26
+        { src: 'img/restoration-10.jpg', alt: 'A yellow crane parked on the stone wall beside the Tide Mill building, seen across the water in early fall' },
+        // 10/09/26
+        { src: 'img/restoration-11.jpg', alt: 'A crane in front of the Tide Mill building, seen across the mill pond under a clear blue sky' },
+        { src: 'img/restoration-12.jpg', alt: 'A large yellow crane with its boom raised above the stone wall at the Tide Mill Dam', pos: '50% 27%' },
+        // 10/25/26
+        { src: 'img/restoration-13.jpg', alt: 'A steel pile standing in the water beside the bridge, with the crane on the stone wall' },
+        // 11/04/26
+        { src: 'img/restoration-14.jpg', alt: 'A crane and large white bags of material on the stone wall near the Tide Mill building' },
+        // 11/19/26
+        { src: 'img/restoration-15.jpg', alt: 'A line of steel sheet piling and black sheeting across the water at the Tide Mill Dam' },
         // 11/20/26
-        { src: 'img/restoration-4.jpg', alt: img.alt, pos: '50% 30%' },
+        { src: 'img/restoration-4.jpg', alt: 'A crane towering over steel sheet piling at the Tide Mill Dam, seen from the water', pos: '50% 30%' },
         // 11/21/26
         { src: 'img/restoration-1.jpg', alt: 'Excavator and crane working beside the Tide Mill Dam during restoration, with steel sheet piling along the far bank' },
         { src: 'img/restoration-2.jpg', alt: 'Steel sheet piling in place at the Tide Mill Dam, with the bridge and Southport Harbor beyond' },
@@ -555,19 +568,22 @@
         { src: 'img/restoration-7.jpg', alt: 'A crane on the stone wall at dusk, with a line of steel sheet piling across the water at the Tide Mill Dam' },
         { src: 'img/restoration-8.jpg', alt: 'Steel sheet piling in the water in front of the Tide Mill building, with a crane on the bank' }
       ];
-      photos.forEach(function (p) { new Image().src = p.src; });
+      function preload(i) { new Image().src = photos[i % photos.length].src; }
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
       var INTERVAL_MS = 3000;
       var FADE_MS = 400;
       var current = 0;
       var paused = false;
+      preload(1);
+      preload(2);
       frame.addEventListener('mouseenter', function () { paused = true; });
       frame.addEventListener('mouseleave', function () { paused = false; });
 
       setInterval(function () {
         if (paused || document.hidden) return;
         current = (current + 1) % photos.length;
+        preload(current + 2);
         var p = photos[current];
         img.classList.add('is-fading');
         setTimeout(function () {
