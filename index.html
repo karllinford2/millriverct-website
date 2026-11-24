@@ -320,7 +320,7 @@
     <div class="restoration">
       <p class="kicker">Restoration Photos</p>
       <div class="restoration__frame" id="restorationFrame">
-        <img src="img/restoration-1.jpg" alt="Excavator and crane working beside the Tide Mill Dam during restoration, with steel sheet piling along the far bank" width="640" height="480" />
+        <img src="img/restoration-4.jpg" alt="A crane towering over steel sheet piling at the Tide Mill Dam, seen from the water" width="640" height="480" style="object-position:50% 30%" />
       </div>
     </div>
   </section>
@@ -541,11 +541,19 @@
       var frame = document.getElementById('restorationFrame');
       if (!frame) return;
       var img = frame.querySelector('img');
+      // Shown in the order taken (dates from the original file names, mmddyy). Keep new photos in date order.
       var photos = [
-        { src: 'img/restoration-1.jpg', alt: img.alt },
+        // 11/20/26
+        { src: 'img/restoration-4.jpg', alt: img.alt, pos: '50% 30%' },
+        // 11/21/26
+        { src: 'img/restoration-1.jpg', alt: 'Excavator and crane working beside the Tide Mill Dam during restoration, with steel sheet piling along the far bank' },
         { src: 'img/restoration-2.jpg', alt: 'Steel sheet piling in place at the Tide Mill Dam, with the bridge and Southport Harbor beyond' },
         { src: 'img/restoration-3.jpg', alt: 'A crane and construction equipment behind steel sheet piling at the Tide Mill Dam' },
-        { src: 'img/restoration-4.jpg', alt: 'A crane towering over steel sheet piling at the Tide Mill Dam, seen from the water', pos: '50% 30%' }
+        // 11/23/26
+        { src: 'img/restoration-5.jpg', alt: 'Close view of steel sheet piling, black sheeting, and hoses beside the stone wall at the Tide Mill Dam' },
+        { src: 'img/restoration-6.jpg', alt: 'Steel sheet piling and black sheeting meeting the rocky bank at the Tide Mill Dam' },
+        { src: 'img/restoration-7.jpg', alt: 'A crane on the stone wall at dusk, with a line of steel sheet piling across the water at the Tide Mill Dam' },
+        { src: 'img/restoration-8.jpg', alt: 'Steel sheet piling in the water in front of the Tide Mill building, with a crane on the bank' }
       ];
       photos.forEach(function (p) { new Image().src = p.src; });
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
